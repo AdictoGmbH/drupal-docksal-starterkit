@@ -1,0 +1,8 @@
+uuid: 8ac47a05-ee5b-45f7-8b0b-d4c4d2b37719
+langcode: en
+status: true
+dependencies: {  }
+id: footer-meta
+label: 'Footer Meta'
+description: ''
+locked: false

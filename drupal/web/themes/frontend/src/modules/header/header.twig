@@ -1,0 +1,13 @@
+<div is="headerComponent" inline-template ref="header">
+  <header class="m-header" role="banner">
+    <div ref="headerWrapper" class="m-header__wrapper">
+      <div class="l-container">
+        <div class="m-header__inner">
+          {{ page.header }}
+          {{ page.navigation }}
+        </div>
+      </div>
+    </div>
+    <span class="m-header__sticky" ref="stickyIndicator"></span>
+  </header>
+</div>

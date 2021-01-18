@@ -1,0 +1,25 @@
+uuid: 62dd667c-3b49-4b8c-b0d4-04f938eb8055
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.header-meta
+  module:
+    - system
+  theme:
+    - frontend
+id: headermeta
+theme: frontend
+region: navigation
+weight: -4
+provider: null
+plugin: 'system_menu_block:header-meta'
+settings:
+  id: 'system_menu_block:header-meta'
+  label: 'Header Meta'
+  provider: system
+  label_display: visible
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }
