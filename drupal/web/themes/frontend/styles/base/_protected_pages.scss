@@ -1,0 +1,7 @@
+.protected-pages-enter-password {
+  margin-top: pxToRem($offset-small);
+
+  .form-type-password {
+    margin: pxToRem($offset-basic) 0;
+  }
+}

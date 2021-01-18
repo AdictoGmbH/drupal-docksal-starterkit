@@ -3,11 +3,3 @@
  * Provides the layout styles for two-column layout section.
  */
 
-.layout--onecol-100 {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.layout--onecol-100 > .layout__region {
-  flex: 0 1 100%;
-}

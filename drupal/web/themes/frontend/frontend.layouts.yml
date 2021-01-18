@@ -27,3 +27,69 @@ layout_twocol_50:
       label: Left
     second:
       label: Right
+
+layout_threecol_33:
+  label: 'Three column 33/33/33'
+  path: layouts/threecol_33
+  library: frontend/layout_threecol_33
+  template: layout--threecol-33
+  category: 'Columns: 3'
+  default_region: first
+  weight: -97
+  icon_map:
+    - [first, second, third]
+  regions:
+    first:
+      label: Left
+    second:
+      label: Middle
+    third:
+      label: Right
+
+layout_twocol_66_33:
+  label: 'Two column 66/33'
+  path: layouts/twocol_66_33
+  library: frontend/layout_twocol_66_33
+  template: layout--twocol-66-33
+  category: 'Columns: 2'
+  default_region: first
+  weight: -96
+  icon_map:
+    - [first, first, second]
+  regions:
+    first:
+      label: Left
+    second:
+      label: Right
+
+layout_twocol_33_66:
+  label: 'Two column 33/66'
+  path: layouts/twocol_33_66
+  library: frontend/layout_twocol_33_66
+  template: layout--twocol-33-66
+  category: 'Columns: 2'
+  default_region: first
+  weight: -95
+  icon_map:
+    - [first, second, second]
+  regions:
+    first:
+      label: Left
+    second:
+      label: Right
+
+layout_twocol_75_25:
+  label: 'Two column 75/25'
+  path: layouts/twocol_75_25
+  library: frontend/layout_twocol_75_25
+  template: layout--twocol-75-25
+  category: 'Columns: 2'
+  default_region: first
+  weight: -94
+  icon_map:
+    - [first, second, second]
+  regions:
+    first:
+      label: Left
+    second:
+      label: Right

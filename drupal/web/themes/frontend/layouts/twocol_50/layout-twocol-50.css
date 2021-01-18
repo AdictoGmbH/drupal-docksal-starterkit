@@ -3,17 +3,26 @@
  * Provides the layout styles for two-column layout section.
  */
 
-.layout--twocol-50 {
-  display: flex;
-  flex-wrap: wrap;
+.l-columns--twocol-50 > .l-column + .l-column {
+  margin-top: 1.75rem;
 }
 
-.layout--twocol-50 > .layout__region {
-  flex: 0 1 100%;
-}
+/* Print */
+@media print, (min-width: 64em) {
+  .l-columns--twocol-50 {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -0.4375rem;
+  }
 
-@media screen and (min-width: 1024px) {
-  .layout--twocol-50 > .layout__region {
-    flex: 0 1 50%;
+  .l-columns--twocol-50 > .l-column {
+    flex-basis: 50%;
+    max-width: 50%; /* IE */
+    padding: 0.4375rem;
+    min-width: 0;
+  }
+
+  .l-columns--twocol-50 > .l-column + .l-column {
+    margin-top: 0;
   }
 }

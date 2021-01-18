@@ -30,28 +30,43 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('header__list') }} data-init="menu">
+      <ul{{ attributes.addClass('m-header__navigation-list') }} data-init="menu">
     {% else %}
-      <ul class="header__list">
+      <ul class="m-header__navigation-list m-header__navigation-list--l{{ menu_level }}">
     {% endif %}
     {% for item in items %}
+      {% set description = item.original_link.getDescription() %}
       {%
         set classes = [
-        'header__item',
-        item.in_active_trail ? 'header__item--active',
-      ]
+          'm-header__navigation-item',
+          'm-header__navigation-item--l' ~ menu_level,
+          item.in_active_trail ? 'm-header__navigation-item--active',
+          item.below ? 'm-header__navigation-item--dropdown',
+          description ? 'm-header__navigation-item--' ~ description,
+        ]
       %}
       {%
-        set linkClasses = {
-          'class': 'header__link'
+        set linkAttributes = {
+          'class': 'm-header__navigation-link m-header__navigation-link--l' ~ menu_level
         }
       %}
-      <li{{ item.attributes.addClass(classes) }}>
-        {{ link(item.title, item.url, linkClasses) }}
-        {% if item.below %}
-          {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
-        {% endif %}
-      </li>
+      {% if item.below %}
+        <div is="accordionComponent" inline-template>
+          <li{{ item.attributes.addClass(classes) }} v-bind:class="{ 'is-expanded': isVisible }" @mouseenter="toggle" @mouseleave="toggle">
+            <button class="{{ linkAttributes.class }}" type="button" aria-haspopup="true" aria-expanded="false" @click="toggle">{{ item.title }}</button>
+{#            {{ svg_icon('plus', 'm-header__navigation-icon') }}#}
+            <transition @enter="enterHeight" @leave="leaveHeight">
+              <div class="m-header__navigation-dropdown" v-show="isVisible" style="display: none;">
+                {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
+              </div>
+            </transition>
+          </li>
+        </div>
+      {% else %}
+        <li{{ item.attributes.addClass(classes) }}>
+          {{ link(item.title, item.url, linkAttributes) }}
+        </li>
+      {% endif %}
     {% endfor %}
     </ul>
   {% endif %}

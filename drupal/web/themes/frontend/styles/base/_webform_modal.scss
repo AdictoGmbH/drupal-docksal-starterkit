@@ -1,0 +1,86 @@
+/* ==|====================
+  Webform modal styles
+======================= */
+
+.webform-message {
+  margin-bottom: pxToRem($offset-small);
+
+  // Hide inline confirmation
+  &.webform-confirmation-modal {
+    display: none;
+  }
+
+  .form-description-icon {
+    display: none;
+  }
+}
+
+.webform-confirmation-modal {
+  font-family: $font;
+
+  &.ui-dialog,
+  &.ui-dialog .ui-dialog-titlebar {
+    background-color: map-get(map-get($colors, secondary), dark);
+  }
+
+  &.ui-dialog .ui-dialog-titlebar,
+  &.ui-dialog .ui-dialog-content {
+    color: map-get(map-get($colors, basics), white);
+  }
+
+  &.ui-dialog {
+    border-radius: 2px;
+    border: none;
+    overflow: hidden;
+    font-size: pxToRem(18);
+    padding: pxToRem($offset-basic);
+  }
+
+  &.ui-dialog .ui-dialog-titlebar {
+    border: none;
+    padding: 0;
+    font-weight: normal;
+    position: static;
+  }
+
+  .ui-dialog-content {
+    padding: pxToRem($offset-basic) pxToRem(150) 0 0;
+    font-size: pxToRem(14);
+
+    .icon {
+      display: none;
+    }
+
+    strong {
+      font-weight: lighter;
+    }
+  }
+
+  .ui-button {
+    @extend .form-submit;
+
+    position: absolute;
+    z-index: 1;
+    text-indent: 0;
+    width: auto;
+    height: auto;
+    margin: 0;
+    right: pxToRem($offset-basic);
+    bottom: pxToRem($offset-basic);
+    top: auto;
+    font-size: pxToRem(14);
+    border: 1px solid map-get(map-get($colors, basics), white);
+    background-color: map-get(map-get($colors, secondary), dark);
+    outline: none;
+
+    &:hover,
+    [data-focus-source="key"] &:focus {
+      background-color: transparentize(map-get(map-get($colors, basics), white), 0.95);
+    }
+
+    .ui-icon {
+      display: none;
+    }
+  }
+}
+

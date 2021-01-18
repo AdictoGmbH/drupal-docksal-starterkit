@@ -1,0 +1,278 @@
+$sprites: (
+    'academic-cap': "/themes/frontend/dist/sprites/sprite.svg#academic-cap-view",
+    'arrow-down-circle-filled': "/themes/frontend/dist/sprites/sprite.svg#arrow-down-circle-filled-view",
+    'arrow-down-circle': "/themes/frontend/dist/sprites/sprite.svg#arrow-down-circle-view",
+    'arrow-down-small': "/themes/frontend/dist/sprites/sprite.svg#arrow-down-small-view",
+    'arrow-down': "/themes/frontend/dist/sprites/sprite.svg#arrow-down-view",
+    'arrow-right-circle': "/themes/frontend/dist/sprites/sprite.svg#arrow-right-circle-view",
+    'arrow-right-exit': "/themes/frontend/dist/sprites/sprite.svg#arrow-right-exit-view",
+    'arrow-right-small': "/themes/frontend/dist/sprites/sprite.svg#arrow-right-small-view",
+    'arrow-right': "/themes/frontend/dist/sprites/sprite.svg#arrow-right-view",
+    'arrow-up-circle': "/themes/frontend/dist/sprites/sprite.svg#arrow-up-circle-view",
+    'arrow-up': "/themes/frontend/dist/sprites/sprite.svg#arrow-up-view",
+    'bed': "/themes/frontend/dist/sprites/sprite.svg#bed-view",
+    'book': "/themes/frontend/dist/sprites/sprite.svg#book-view",
+    'bus': "/themes/frontend/dist/sprites/sprite.svg#bus-view",
+    'calendar-entry': "/themes/frontend/dist/sprites/sprite.svg#calendar-entry-view",
+    'calendar': "/themes/frontend/dist/sprites/sprite.svg#calendar-view",
+    'car': "/themes/frontend/dist/sprites/sprite.svg#car-view",
+    'case-plus': "/themes/frontend/dist/sprites/sprite.svg#case-plus-view",
+    'case': "/themes/frontend/dist/sprites/sprite.svg#case-view",
+    'checkbox-checked': "/themes/frontend/dist/sprites/sprite.svg#checkbox-checked-view",
+    'checkbox': "/themes/frontend/dist/sprites/sprite.svg#checkbox-view",
+    'close': "/themes/frontend/dist/sprites/sprite.svg#close-view",
+    'download': "/themes/frontend/dist/sprites/sprite.svg#download-view",
+    'emergency': "/themes/frontend/dist/sprites/sprite.svg#emergency-view",
+    'handshake': "/themes/frontend/dist/sprites/sprite.svg#handshake-view",
+    'home': "/themes/frontend/dist/sprites/sprite.svg#home-view",
+    'info': "/themes/frontend/dist/sprites/sprite.svg#info-view",
+    'mail': "/themes/frontend/dist/sprites/sprite.svg#mail-view",
+    'marker-plus': "/themes/frontend/dist/sprites/sprite.svg#marker-plus-view",
+    'marker': "/themes/frontend/dist/sprites/sprite.svg#marker-view",
+    'menu': "/themes/frontend/dist/sprites/sprite.svg#menu-view",
+    'minus': "/themes/frontend/dist/sprites/sprite.svg#minus-view",
+    'person': "/themes/frontend/dist/sprites/sprite.svg#person-view",
+    'phone-mobile': "/themes/frontend/dist/sprites/sprite.svg#phone-mobile-view",
+    'phone': "/themes/frontend/dist/sprites/sprite.svg#phone-view",
+    'plus': "/themes/frontend/dist/sprites/sprite.svg#plus-view",
+    'print': "/themes/frontend/dist/sprites/sprite.svg#print-view",
+    'radiobutton-checked': "/themes/frontend/dist/sprites/sprite.svg#radiobutton-checked-view",
+    'radiobutton': "/themes/frontend/dist/sprites/sprite.svg#radiobutton-view",
+    'search': "/themes/frontend/dist/sprites/sprite.svg#search-view",
+    'send': "/themes/frontend/dist/sprites/sprite.svg#send-view",
+    'shield': "/themes/frontend/dist/sprites/sprite.svg#shield-view"
+);
+
+$sizes: (
+    'academic-cap': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'arrow-down-circle-filled': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'arrow-down-circle': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'arrow-down-small': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'arrow-down': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'arrow-right-circle': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'arrow-right-exit': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'arrow-right-small': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'arrow-right': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'arrow-up-circle': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'arrow-up': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'bed': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'book': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'bus': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'calendar-entry': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'calendar': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'car': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'case-plus': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'case': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'checkbox-checked': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'checkbox': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'close': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'download': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'emergency': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'handshake': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'home': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'info': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'mail': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'marker-plus': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'marker': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'menu': (
+        'width': 56px,
+        'height': 56px
+    ),
+    'minus': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'person': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'phone-mobile': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'phone': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'plus': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'print': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'radiobutton-checked': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'radiobutton': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'search': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'send': (
+        'width': 24px,
+        'height': 24px
+    ),
+    'shield': (
+        'width': 24px,
+        'height': 24px
+    )
+);
+
+$variables: (
+    /* EMPTY */
+);
+
+// https://github.com/waldemarfm/sass-svg-uri/blob/v1.0.0/_svg-uri.scss
+@function sprite-str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+
+    @if type-of($replace) == 'null' {
+        $replace: '';
+    }
+
+    @if ( $index ) {
+        @return str-slice($string, 1, $index - 1) + $replace + sprite-str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+@function sprite-svg-uri($value) {
+    $encoded: '';
+    $slice: 2000;
+    $index: 0;
+
+    @for $i from 1 through ceil(str-length($value) / $slice) {
+        $chunk: str-slice($value, $index, $index + $slice - 1);
+        $chunk: sprite-str-replace($chunk, '"', "'");
+        $chunk: sprite-str-replace($chunk, '<', '%3C');
+        $chunk: sprite-str-replace($chunk, '>', '%3E');
+        $chunk: sprite-str-replace($chunk, '&', '%26');
+        $chunk: sprite-str-replace($chunk, '#', '%23');
+        $encoded: #{$encoded}#{$chunk};
+        $index: $index + $slice;
+    }
+
+    @return $encoded;
+}
+
+@mixin sprite($name, $user-variables: (), $include-size: false) {
+    $sprite: map-get($sprites, $name);
+
+    // Inject variables
+    $default-variables: map-get($variables, $name);
+    @if type-of($default-variables) == 'map' {
+        @each $key, $value in map-merge($default-variables, $user-variables) {
+            @if ( not map-has-key($default-variables, $key) ) {
+                @warn 'Sprite \'#{$name}\' does not support variable named \'#{$key}\'';
+            }
+
+            $sprite: sprite-str-replace($sprite, '___#{$key}___', sprite-svg-uri(quote(#{$value})));
+        }
+    } @else if type-of($user-variables) == 'map' {
+        @warn 'Sprite \'#{$name}\' does not contain any variables';
+    }
+
+    background: url($sprite) center no-repeat;
+
+    @if $include-size {
+        $size: map-get($sizes, $name);
+        background-size: map-get($size, width) map-get($size, height);
+    }
+}

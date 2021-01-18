@@ -1,0 +1,8 @@
+// Add utility class for each color
+@each $category, $entries in $colors {
+  @each $name, $color in $entries {
+    .u-colors-#{$category}-#{"" + $name} {
+      color: $color;
+    }
+  }
+}

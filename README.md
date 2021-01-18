@@ -1,4 +1,4 @@
-# Drupal Docksal Starterkit
+# Drupal Docksal Starterkit for PSY Web
 
 A Drupal Starterkit with GraphQL, GraphQL Twig, Gin Future UI, Minimal Frontend Setup with Webpack and vanilla JS running on Docksal (Docker).
 
@@ -18,16 +18,7 @@ Install Docksal: https://docksal.io/
 ### Clone repo
 Clone the repo into ```~/Projects```
 ```
-git clone git@github.com:saschaeggi/drupal-docksal-starterkit.git drupal-docksal-starterkit
-```
-
-### *Optional:* Add custom domain for local development
-Add the following to your `/etc/hosts`:
-
-```
-# Drupal Docksal Starterkit
-192.168.64.100 drupal.mydomain.local
-::2 drupal.mydomain.local
+git clone git@github.com:AdictoGmbH/drupal-docksal-starterkit.git drupal-docksal-starterkit
 ```
 
 ### Build/Install containers
@@ -39,6 +30,12 @@ fin init
 Replace `/sites/development.services.yml` in `drupal/web/sites/default/settings.local.php` with `/sites/local.services.yml`.
 
 ---
+
+### Add Drush local config
+```
+echo "options:
+  uri: 'http://drupal-docksal-starterkit.docksal/'" >> drupal/drush/drush.yml
+```
 
 ## Commands
 
@@ -81,6 +78,29 @@ Make sure you're in the frontend folder (`cd drupal/web`)
 ```
 fin drush COMAMND
 ```
+
+#### Show Aliases
+```
+fin drush sa
+```
+
+#### Sync Database
+```
+fin drush sql-sync @dev @self
+```
+Syncs the DB, Syntax: @FROM-ALIAS @TO-ALIAS
+
+#### Rsync Files
+```
+fin drush rsync @dev:%files @self:%files
+```
+Syncs files, Syntax: @FROM-ALIAS @TO-ALIAS, %files is a wildcard for the specificed Drupal files folder
+
+#### Drush SSH
+```
+fin drush @dev ssh
+```
+SSH into the remote server
 
 ### Composer
 Make sure you're in the frontend folder (`cd drupal/web`)
@@ -135,6 +155,7 @@ nvm use
 npm install
 ```
 
+### Setup
 Install dependencies in `drupal/web/core` (used for linting, e.g.)
 ```bash
 cd drupal/web/core/
@@ -142,20 +163,44 @@ nvm use 10.15.1 # no version specified, let's use the one from `drupal/web/theme
 npm install
 ```
 
-Run watcher
+### Run theme (compile / watch)
+See [drupal/web/themes/frontend/README.md](drupal/web/themes/frontend/README.md)
+
+---
+
+## Special
+
+### Skip frontend build on commit
+
+By default, the frontend is built in a `pre-commit` hook and `drupal/web/themes/frontend/dist` added to the commit. Use `--no-verify` in your `git commit` command to skip this behavior.
+
+### Database update with new structure
+
 ```
-cd drupal/web/themes/frontend/
-npm run dev
+cd drupal/web
+fin bash
+drush sql-cli < PATH_TO_DUMP
+drush cr
+drush cim -y
+drush updb
 ```
 
-Compile assets
-```
-cd drupal/web/themes/frontend/
-npm run prod
+## Deployment
+
+To deploy changes use
+
+```shell script
+bash drupal/web/deploy.sh
 ```
 
-Scaffold components
-```
-cd drupal/web/themes/frontend/
-npm run scaffold
-```
+Replace /home/YOURSERVER with the home path on your server
+
+It includes the following steps:
+- db dump
+- git pull
+- composer install
+- drush cim -y
+- drush updb
+- drush cr
+
+It checks environment. Server environments will be recognised based on the path prefix /home/YOURSERVER.

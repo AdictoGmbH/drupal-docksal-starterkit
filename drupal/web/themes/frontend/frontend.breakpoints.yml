@@ -15,14 +15,8 @@ frontend.medium:
     - 1.5x
 frontend.large:
   label: large
-  mediaQuery: 'all and (min-width: 1025px)'
+  mediaQuery: 'all and (min-width: 1024px)'
   weight: 2
-  multipliers:
-    - 1.5x
-frontend.wide:
-  label: wide
-  mediaQuery: 'all and (min-width: 1280px)'
-  weight: 3
   multipliers:
     - 1.5x
 frontend.ultra:

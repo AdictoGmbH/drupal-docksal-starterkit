@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <defs/>
+  <defs>
+    <path id="arrow-down-circle-filled-a" d="M10 0C4.48 0 0 4.48 0 10s4.48 10 10 10 10-4.48 10-10S15.52 0 10 0zm0 13L6 9h8l-4 4z"/>
+  </defs>
+  <use fill-rule="nonzero" transform="translate(2 2)" xlink:href="#arrow-down-circle-filled-a"/>
+</svg>

@@ -52,6 +52,8 @@ css/map
 # Other
 .DS_Store
 
+playbook.retry
+
 # Drush
 drushrc.local.php
-playbook.retry
+drupal/drush/drush.yml

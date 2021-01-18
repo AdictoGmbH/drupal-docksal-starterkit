@@ -73,29 +73,23 @@
  */
 #}
 
-<div id="app">
-  <header class="m-header" role="banner" aria-label="{{ 'Site header'|t}}">
-    <div class="l-container">
-      {{ page.header }}
-    </div>
-  </header>
+<div id="app" class="l-wrapper">
+  {% include '@modules/header/header.twig' %}
 
   <main class="l-main">
-    <div class="l-container">
-      <div class="system-messages">
+    <div class="system-messages">
+      <div class="l-container">
         {{ page.messages }}
       </div>
-
-      {% if is_front == false %}
-        {{ title }}
-      {% endif %}
-      {{ page.content }}
     </div>
+
+    {% if is_front == false %}
+      {{ title }}
+    {% endif %}
+
+    {{ page.breadcrumb }}
+    {{ page.content }}
   </main>
 
-  <footer class="m-footer">
-    <div class="l-container">
-      {{ page.footer }}
-    </div>
-  </footer>
+  {% include '@modules/footer/footer.twig' %}
 </div>

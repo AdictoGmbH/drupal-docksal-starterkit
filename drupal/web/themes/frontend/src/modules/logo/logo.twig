@@ -1,0 +1,8 @@
+<a href="{{ path('<front>') }}" title="{{ 'Home'|t }}" rel="home" class="m-logo">
+  {% if site_logo %}
+    <img src="{{ site_logo }}" alt="{{ 'Logo'|t }}"/>
+  {% endif %}
+  {% if site_name %}
+    {{ site_name }}
+  {% endif %}
+</a>

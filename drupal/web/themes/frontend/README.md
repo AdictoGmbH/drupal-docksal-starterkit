@@ -18,6 +18,14 @@ npm run prod
 ```
 
 Scaffold components
+
 ```
 npm run scaffold
+```
+
+Run storybook
+
+```
+// Needs `npx sb init` first
+npm run storybook
 ```

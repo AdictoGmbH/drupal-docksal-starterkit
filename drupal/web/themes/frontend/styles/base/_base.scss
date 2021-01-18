@@ -2,36 +2,101 @@
   Base
 ======================= */
 
-article {
-  overflow-x: hidden;
+html {
+  font-size: ($font-size-base / 16px) * 100%;
 }
 
 body {
-  font-size: 100%;
   font-family: $font;
-  font-weight: 400;
-  line-height: normal;
+  font-weight: 300;
+  line-height: 1.4;
 
   &:before {
     display: none;
   }
-
-  // Generate breakpoints for JS
-  @each $key, $breakpoint in $mqBreakpoints {
-    @include mq($key) {
-      &:before {
-        content: '#{$key}';
-      }
-    }
-  }
 }
 
 ::selection {
-  background: lighten($color-selection, 30);
+  background: map-get(map-get($colors, secondary), bright);
+}
+
+[data-focus-source="pointer"] *:focus {
+  outline: 0;
 }
 
 .h1-alike,
 h1 {
-  font-size: 3rem;
+  font-size: pxToRem(22);
+  font-weight: 700;
+  margin: pxToRem($offset-small) 0 pxToRem($offset-small);
+}
+
+.h2-alike,
+h2 {
+  font-size: pxToRem(22);
+  font-weight: 700;
+  margin: pxToRem($offset-basic) 0 pxToRem($offset-basic);
+}
+
+.h3-alike,
+h3 {
+  font-size: pxToRem(20);
+  font-weight: 700;
+  margin: 0;
+}
+
+.h4-alike,
+h4 {
+  font-size: pxToRem(18);
   font-weight: 500;
+  margin: 0;
+}
+
+.h5-alike,
+h5 {
+  font-size: pxToRem(18);
+  font-weight: 400;
+  margin: 0;
+}
+
+p {
+  -webkit-font-smoothing: antialiased;
+}
+
+[v-cloak] {
+  display: none
+}
+
+// Print
+@page {
+  //size: auto;
+  size: A4;
+  margin: 15mm 10mm 20mm 10mm;
+}
+
+@page:first {
+  //size: auto;
+  size: A4;
+  margin-top: -5mm;
+  margin-bottom: 32mm;
+}
+
+@media print {
+  html, body {
+    width: 210mm;
+    height: auto;
+  }
+
+  p, li {
+    page-break-inside: avoid;
+  }
+
+  li {
+    orphans: 2;
+    widows: 2;
+  }
+
+  ul {
+    page-break-inside: auto;
+  }
 }

@@ -1,8 +1,8 @@
 // Polyfills
-import 'mdn-polyfills/NodeList.prototype.forEach';
-import 'mdn-polyfills/Node.prototype.remove';
-import 'mdn-polyfills/Element.prototype.matches';
-import 'mdn-polyfills/Element.prototype.closest';
+import loadPolyfills from './helpers/polyfills';
+
+// Accessibility helpers
+import focusSource from 'ally.js/amd/style/focus-source';
 
 // Bundle Config
 import '../.modernizrrc';
@@ -13,21 +13,71 @@ import lazyload from './libs/lazyload.js';
 import './helpers/breakpoint';
 
 // Modules
+import '../src/modules/favicon/favicon';
+import '../src/modules/logo/logo';
 import text from '../src/modules/text/text.js';
-
-import { runInContext } from 'vm';
 
 // Vue app
 import Vue from 'vue';
 import './App.vue';
 
-window.addEventListener('DOMContentLoaded', function() {
+window.addEventListener('DOMContentLoaded', async function () {
+  await loadPolyfills();
+
+  focusSource();
+
   new Vue({
     el: '#app',
+    mounted () {
+      lazyload.update();
+    }
+  });
+
+  // Better exposed filters
+  if (document.querySelector('.views-exposed-form input[type="submit"]')) {
+    // Hide the apply button.
+    document.querySelector('.views-exposed-form input[type="submit"]').style.display = 'none';
+
+    // When the change event fires, run the submit handler
+    for (let el of Object.values(document.querySelectorAll('.views-exposed-form input, .views-exposed-form select'))) {
+      el.addEventListener('change', function (event) {
+        el.closest('form').submit();
+      });
+    }
+  }
+
+  function updateFilledState (inputEl) {
+    if (!inputEl || inputEl.type === 'checkbox' || inputEl.type === 'radio') {
+      return;
+    }
+    if (inputEl.value.trim() !== '') {
+      inputEl.parentElement.classList.add('input--filled');
+    } else {
+      inputEl.parentElement.classList.remove('input--filled');
+    }
+  }
+
+  function handleInput (e) {
+    const inputEl = e.target;
+    updateFilledState(inputEl);
+  }
+
+  // Forms
+  [].slice.call(document.querySelectorAll('.form-item')).forEach(function (inputEl) {
+    inputEl.addEventListener('keyup', handleInput);
+    inputEl.addEventListener('focusin', (e) => {
+      const inputEl = e.target;
+      if (!inputEl || inputEl.type === 'checkbox' || inputEl.type === 'radio') {
+        return;
+      }
+      inputEl.parentElement.classList.add('input--filled');
+    });
+    inputEl.addEventListener('focusout', handleInput);
+    updateFilledState(inputEl.querySelector('input:not(.form-radio):not(.form-checkbox),textarea,select'));
   });
 });
 
-window.addEventListener('load', function() {
+window.addEventListener('load', function () {
   //Page loaded
   document.querySelector('body').classList.add('loaded');
 });
@@ -35,16 +85,16 @@ window.addEventListener('load', function() {
 // Calls
 (function (Drupal, drupalSettings) {
   Drupal.behaviors.lazyLoad = {
-    attach: function attach(context) {
+    attach: function attach (context) {
       lazyload.init(context);
     },
-    update: function update(context) {
+    update: function update (context) {
       lazyload.update();
     }
   };
 
   Drupal.behaviors.text = {
-    attach: function attach(context) {
+    attach: function attach (context) {
       text.init(context);
     }
   };

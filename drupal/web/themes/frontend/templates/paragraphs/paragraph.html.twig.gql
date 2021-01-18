@@ -6,3 +6,10 @@ query ($paragraph: String!) {
     ... Text
   }
 }
+
+fragment Text on ParagraphText {
+  id
+  fieldText {
+    processed
+  }
+}

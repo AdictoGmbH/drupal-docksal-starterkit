@@ -1,0 +1,83 @@
+.pager__items {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  padding: pxToRem($offset-small) 0 0;
+  margin: 0;
+
+  li {
+    display: flex;
+    margin-top: pxToRem(7)
+  }
+
+  .pager__item--line-break {
+    width: 100%;
+  }
+
+  .pager__item--first,
+  .pager__item--previous,
+  .pager__item--next,
+  .pager__item--last {
+    width: calc(50% - 4px);
+
+    a {
+      width: 100%;
+    }
+  }
+
+  .pager__item--previous,
+  .pager__item--last {
+    margin-left: pxToRem(7);
+  }
+
+  li:not(.pager__item--line-break):not(.pager__item--first):not(.pager__item--next) + li {
+    margin-left: pxToRem($offset-basic);
+  }
+
+  a {
+    background-color: map-get(map-get($colors, basics), grey-dark);
+    color: map-get(map-get($colors, basics), white);
+    text-decoration: none;
+    padding: pxToRem(7) pxToRem(14);
+    -webkit-font-smoothing: antialiased;
+    border-radius: 2px;
+
+    &:hover,
+    [data-focus-source="key"] &:focus {
+      background-color: transparentize(map-get(map-get($colors, basics), grey-dark), 0.15);
+    }
+  }
+
+  .is-active a {
+    background-color: map-get(map-get($colors, secondary), dark);
+
+    &:hover,
+    [data-focus-source="key"] &:focus {
+      background-color: transparentize(map-get(map-get($colors, secondary), dark), 0.15);
+    }
+  }
+}
+
+@include mq($from: small) {
+  .pager__items {
+    .pager__item--line-break {
+      display: none;
+      width: 0;
+    }
+
+    li + li {
+      margin-left: pxToRem($offset-basic);
+    }
+
+    .pager__item--first,
+    .pager__item--previous,
+    .pager__item--next,
+    .pager__item--last {
+      width: auto;
+
+      a {
+        width: auto;
+      }
+    }
+  }
+}

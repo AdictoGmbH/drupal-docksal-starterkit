@@ -1,0 +1,212 @@
+[
+  {
+    "original": "aerzte-zuweisende",
+    "new": "case",
+    "name": "Arztkoffer (zuweisende Ärzte)"
+  },
+  {
+    "original": "aufsuchende-angebote",
+    "new": "case-plus",
+    "name": "Arzttasche (aufsuchende Angebote)"
+  },
+  {
+    "original": "auto",
+    "new": "car",
+    "name": "Auto"
+  },
+  {
+    "original": "stationaere-angebote",
+    "new": "bed",
+    "name": "Bett (stationäre Angebote)"
+  },
+  {
+    "original": "buch",
+    "new": "book",
+    "name": "Buch"
+  },
+  {
+    "original": "bus",
+    "new": "bus",
+    "name": "Bus"
+  },
+  {
+    "original": "checkbox-unchecked",
+    "new": "checkbox",
+    "name": "Checkbox"
+  },
+  {
+    "original": "checkbox-checked",
+    "new": "checkbox-checked",
+    "name": "Checkbox ausgewählt"
+  },
+  {
+    "original": "mail",
+    "new": "mail",
+    "name": "Couvert (E-Mail / Brief)"
+  },
+  {
+    "original": "fachaerzte-spezialisten",
+    "new": "academic-cap",
+    "name": "Doktorhut (Fachärzte / Spezialisten)"
+  },
+  {
+    "original": "download",
+    "new": "download",
+    "name": "Download"
+  },
+  {
+    "original": "handshake",
+    "new": "handshake",
+    "name": "Handschlag"
+  },
+  {
+    "original": "home",
+    "new": "home",
+    "name": "Haus"
+  },
+  {
+    "original": "info",
+    "new": "info",
+    "name": "Info"
+  },
+  {
+    "original": "agenda",
+    "new": "calendar",
+    "name": "Kalender"
+  },
+  {
+    "original": "tagesklinische-angebote",
+    "new": "calendar-entry",
+    "name": "Kalender (tagesklinische Angebote)"
+  },
+  {
+    "original": "minus",
+    "new": "minus",
+    "name": "Minus"
+  },
+  {
+    "original": "notfall-navi",
+    "new": "emergency",
+    "name": "Notfall"
+  },
+  {
+    "original": "patienten-interessierte",
+    "new": "person",
+    "name": "Person (Patienten / Interessierte)"
+  },
+  {
+    "original": "expand-less-big",
+    "new": "arrow-up",
+    "name": "Pfeil nach oben"
+  },
+  {
+    "original": "arrow_kreis_up",
+    "new": "arrow-up-circle",
+    "name": "Pfeil nach oben, Kreis"
+  },
+  {
+    "original": "link-pfeil",
+    "new": "arrow-right",
+    "name": "Pfeil nach rechts"
+  },
+  {
+    "original": "external-link",
+    "new": "arrow-right-exit",
+    "name": "Pfeil nach rechts, exit"
+  },
+  {
+    "original": "more-right",
+    "new": "arrow-right-small",
+    "name": "Pfeil nach rechts, klein"
+  },
+  {
+    "original": "arrow-kreis-right",
+    "new": "arrow-right-circle",
+    "name": "Pfeil nach rechts, Kreis"
+  },
+  {
+    "original": "expand-more-big",
+    "new": "arrow-down",
+    "name": "Pfeil nach unten"
+  },
+  {
+    "original": "expand-more",
+    "new": "arrow-down-small",
+    "name": "Pfeil nach unten, klein"
+  },
+  {
+    "original": "arrow-kreis-down",
+    "new": "arrow-down-circle",
+    "name": "Pfeil nach unten, Kreis"
+  },
+  {
+    "original": "arrow-kreis-solid-down",
+    "new": "arrow-down-circle-filled",
+    "name": "Pfeil nach unten, Kreis gefüllt"
+  },
+  {
+    "original": "map-pin",
+    "new": "marker",
+    "name": "Pin"
+  },
+  {
+    "original": "ambulante-angebote ",
+    "new": "marker-plus",
+    "name": "Pin (ambulante Angebote)"
+  },
+  {
+    "original": "plus",
+    "new": "plus",
+    "name": "Plus"
+  },
+  {
+    "original": "print",
+    "new": "print",
+    "name": "Print"
+  },
+  {
+    "original": "radiobutton-unchecked",
+    "new": "radiobutton",
+    "name": "Radiobutton"
+  },
+  {
+    "original": "radiobutton-checked",
+    "new": "radiobutton-checked",
+    "name": "Radiobutton ausgewählt"
+  },
+  {
+    "original": "close-x",
+    "new": "close",
+    "name": "Schliessen"
+  },
+  {
+    "original": "praeventive-angebote",
+    "new": "shield",
+    "name": "Schutzschild (präventive Angebote)"
+  },
+  {
+    "original": "senden",
+    "new": "send",
+    "name": "Senden"
+  },
+  {
+    "original": "suche",
+    "new": "search",
+    "name": "Suche"
+  },
+  {
+    "original": "telefon",
+    "new": "phone",
+    "name": "Telefon"
+  },
+  {
+    "original": "smartphone",
+    "new": "phone-mobile",
+    "name": "Telefon mobil"
+  },
+  {
+    "original": "nav-burger-phone",
+    "new": "menu",
+    "name": "Menu"
+  }
+]

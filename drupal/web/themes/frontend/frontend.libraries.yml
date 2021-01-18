@@ -6,9 +6,9 @@ base:
   js:
     dist/js/main.js: {}
   dependencies:
-  - core/drupal
-  - core/jquery
-  - core/jquery.once
+    - core/drupal
+    - core/jquery
+    - core/jquery.once
 
 # Layouts
 layout_onecol_100:
@@ -22,3 +22,27 @@ layout_twocol_50:
   css:
     theme:
       layouts/twocol_50/layout-twocol-50.css: {}
+
+layout_threecol_33:
+  version: VERSION
+  css:
+    theme:
+      layouts/threecol_33/layout-threecol-33.css: {}
+
+layout_twocol_66_33:
+  version: VERSION
+  css:
+    theme:
+      layouts/twocol_66_33/layout-twocol-66-33.css: {}
+
+layout_twocol_33_66:
+  version: VERSION
+  css:
+    theme:
+      layouts/twocol_33_66/layout-twocol-33-66.css: {}
+
+layout_twocol_75_25:
+  version: VERSION
+  css:
+    theme:
+      layouts/twocol_75_25/layout-twocol-75-25.css: {}

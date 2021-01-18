@@ -1,0 +1,253 @@
+/* ==|====================
+  Form styles
+======================= */
+
+.field--type-webform > .field__label {
+  display: none;
+}
+
+.indicates-required + .mc-field-group,
+.mc-field-group + .mc-field-group,
+#mc_embed_signup .button,
+.form-item + .form-item,
+.form-item + .captcha,
+.form-actions {
+  margin-top: pxToRem($offset-small)
+}
+
+#mc_embed_signup [aria-hidden="true"] {
+  visibility: hidden;
+  // Style which is set automatically on dev but not locally *strange*
+  position: absolute;
+  left: -5000px;
+}
+#mce-responses {
+  display: none;
+}
+
+#mc_embed_signup input,
+#mc_embed_signup select,
+.form-tel, .form-email, .form-text, .form-textarea, .form-search, .form-number, .form-select
+{
+  border: 1px solid map-get(map-get($colors, basics), grey-divider);
+  border-radius: 2px;
+
+  &::placeholder {
+    visibility: hidden;
+  }
+}
+
+.indicates-required,
+.webform-element-description {
+  position: relative;
+  font-size: pxToRem(11);
+  font-weight: 300;
+  line-height: pxToRem(28);
+  letter-spacing: 0.01px;
+  color: map-get(map-get($colors, basics), grey-dark);
+  padding-left: pxToRem(30);
+  margin-top: pxToRem(4);
+  margin-bottom: - pxToRem(10);
+}
+
+.indicates-required {
+  padding: 0;
+}
+
+.form-description-icon {
+  position: absolute;
+  left: 0;
+  top: -1px;
+  bottom: 0;
+  margin: auto;
+  width: pxToRem(16);
+  height: pxToRem(16);
+  font-size: pxToRem(16);
+  fill: map-get(map-get($colors, basics), grey-dark);
+}
+
+
+.form-submit-wrapper {
+  position: relative;
+  max-width: pxToRem(400);
+  width: 100%;
+}
+
+.form-submit-wrapper__icon .icon--search {
+  display: none;
+}
+
+.form-submit-wrapper__icon {
+  position: absolute;
+  right: pxToRem(20);
+  top: -1px;
+  bottom: 0;
+  margin: auto;
+  width: pxToRem(24);
+  height: pxToRem(24);
+  font-size: pxToRem(24);
+  fill: map-get(map-get($colors, basics), white);
+  pointer-events: none;
+
+  .icon {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+#mc_embed_signup .button,
+.form-submit {
+  font-size: pxToRem(20);
+  font-weight: 300;
+  line-height: pxToRem(28);
+  letter-spacing: 0.03px;
+  padding: pxToRem(7) pxToRem(11);
+  background-color: map-get(map-get($colors, secondary), dark);
+  color: map-get(map-get($colors, basics), white);
+  border: none;
+  border-radius: 2px;
+  width: 100%;
+  text-align: left;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: pointer;
+
+  &:hover,
+  [data-focus-source="key"] &:focus {
+    background-color: map-get(map-get($colors, secondary), dark-hover);
+  }
+}
+
+#mc_embed_signup .button {
+  width: auto;
+}
+
+.form-submit-wrapper:focus-within {
+  .form-submit {
+    background-color: map-get(map-get($colors, secondary), dark-hover);
+  }
+}
+
+
+// Styles for the sliding label. Adapted from https://tympanus.net/Development/TextInputEffects/
+.mc-field-group,
+.form-item {
+  position: relative;
+  z-index: 1;
+  display: block;
+  max-width: pxToRem(610);
+  vertical-align: top;
+}
+
+.form-type-checkbox {
+  display: flex;
+  align-items: flex-start;
+}
+
+#mc_embed_signup input,
+#mc_embed_signup select,
+.form-item input:not(.form-submit),
+.form-item textarea,
+.form-item select {
+  position: relative;
+  display: block;
+  padding: pxToRem(7) pxToRem(11);
+  width: 100%;
+  font-size: pxToRem(20);
+  font-weight: 300;
+  line-height: pxToRem(28);
+  letter-spacing: 0.03px;
+  background: transparent;
+  color: map-get(map-get($colors, basics), black);
+  -webkit-appearance: none; /* for box shadows to show on iOS */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.form-item input[required] + label::after {
+  content: " *";
+}
+
+.form-item input.form-checkbox,
+.form-item input.form-radio {
+  display: inline-block;
+  width: auto;
+  margin-top: pxToRem(8);
+  cursor: pointer;
+
+  & + label {
+    pointer-events: initial;
+    cursor: pointer;
+    position: relative;
+    transform: none;
+  }
+}
+
+.form-item input.form-radio {
+  -webkit-appearance: radio;
+}
+.form-item input.form-checkbox {
+  -webkit-appearance: checkbox;
+}
+
+#mc_embed_signup label,
+.form-item label {
+  font-size: pxToRem(20);
+  text-align: left;
+  position: absolute;
+  top: 0;
+  color: map-get(map-get($colors, basics), grey-dark);
+  background-color: transparent;
+  pointer-events: none;
+  overflow: hidden;
+  padding: 0 pxToRem(6);
+  margin-left: pxToRem(6);
+  transform: translate3d(0, pxToRem(7), 0);
+  transition: background-color $fancy-transition, font-size $fancy-transition, transform $fancy-transition;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-touch-callout: none;
+  user-select: none;
+}
+
+#mc_embed_signup label,
+.form-item select + label,
+.form-item input:not(.form-checkbox):not(.form-radio):focus + label,
+.form-item:not(.form-item-captcha-response).input--filled label,
+.form-item .form-textarea-wrapper:focus-within + label,
+.form-item .input--filled + label {
+  font-size: pxToRem(14);
+  background-color: map-get(map-get($colors, basics), white);
+  transform: translate3d(0, - pxToRem(10), 0);
+  z-index: 1;
+}
+
+#mc_embed_signup label {
+  line-height: 1;
+  padding-top: 2px;
+}
+
+// Needs to be after the general form styles
+.form-item-captcha-response {
+  label,
+  .field-prefix {
+    position: relative;
+    display: block;
+    padding: 0;
+    margin: 0 0 pxToRem(7)
+  }
+
+  input {
+    margin-top: 0;
+  }
+
+  .description {
+    font-size: pxToRem(11);
+    font-weight: 300;
+    line-height: pxToRem(28);
+    letter-spacing: 0.01px;
+    color: map-get(map-get($colors, basics), grey-dark);
+  }
+}
+
+

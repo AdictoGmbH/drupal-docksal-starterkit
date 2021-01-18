@@ -11,8 +11,20 @@
 }
 
 @mixin resetButton {
-  background: none;
-  border: none;
+  background: transparent;
+  border: 0;
+  text-align: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  text-transform: inherit;
+  cursor: pointer;
+  width: 100%;
+}
+
+@mixin resetList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 @mixin gridCol($size: $gridColumns, $columns: $gridColumns, $gutter: $gridGutter, $align: top, $maxWidth: true) {
@@ -79,4 +91,24 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+@mixin icon($desktopSize: 32) {
+  height: pxToRem(24);
+  width: pxToRem(24);
+
+  @include mq(medium) {
+    height: pxToRem($desktopSize);
+    width: pxToRem($desktopSize);
+  }
+}
+
+/**
+ * Target IE10+
+ */
+
+@mixin ie-fix {
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    @content;
+  }
 }

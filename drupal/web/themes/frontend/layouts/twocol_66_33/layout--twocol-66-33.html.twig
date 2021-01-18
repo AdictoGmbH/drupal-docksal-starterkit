@@ -1,0 +1,36 @@
+{#
+/**
+ * @file
+ * Theme implementation to display a two-column layout.
+ *
+ * Available variables:
+ * - content: The content for this layout.
+ * - attributes: HTML attributes for the layout <div>.
+ *
+ * @ingroup themeable
+ */
+#}
+{%
+  set classes = [
+    'l-layout'
+  ]
+%}
+{% if content %}
+  <div{{ attributes.addClass(classes) }}>
+    <div class="l-container">
+      <div class="l-columns l-columns--twocol-66-33">
+        {% if content.first %}
+          <div {{ region_attributes.first.addClass('l-column', 'l-column--first') }}>
+            {{ content.first }}
+          </div>
+        {% endif %}
+
+        {% if content.second %}
+          <div {{ region_attributes.second.addClass('l-column', 'l-column--second') }}>
+            {{ content.second }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+{% endif %}

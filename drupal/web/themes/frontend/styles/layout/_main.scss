@@ -2,11 +2,63 @@
    Layout / Main
    ======================= */
 
-.l-main {
+html,
+body {
+  height: 100%;
+}
+
+.l-wrapper {
   display: flex;
   flex-direction: column;
+  min-height: 100.1%; // Force scrollbar so footer accordion does not trigger one intermittently
+}
 
-  @include mq(large) {
-    flex-direction: row;
+.l-main {
+  flex: 1 0 auto;
+  margin-bottom: pxToRem($offset-very-large);
+}
+
+.l-main--home {
+  margin-bottom: 0;
+}
+
+.l-layout-wrapper + .l-layout-wrapper {
+  margin-top: pxToRem($offset-large)
+}
+
+.l-layout__title {
+  font-size: pxToRem(34);
+  font-weight: 500;
+  margin-top: 0;
+  margin-bottom: pxToRem(47);
+
+  @include mq($to: medium) {
+    font-size: pxToRem(22);
+    margin-bottom: pxToRem(22);
+  }
+}
+
+.l-paragraph {
+  display: flex;
+  flex: 1 0 auto;
+}
+
+.l-paragraph + .l-paragraph {
+  margin-top: pxToRem($offset-medium)
+}
+
+// For box elements of the same type use smaller offset
+//.m-element + .m-element {
+//  margin-top: pxToRem($offset-basic)
+//}
+
+// Print
+@media print {
+  .l-paragraph {
+    display: block;
+  }
+
+  .l-wrapper {
+    min-height: 0;
   }
 }

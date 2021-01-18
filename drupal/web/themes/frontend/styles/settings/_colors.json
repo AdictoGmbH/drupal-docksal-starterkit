@@ -1,0 +1,25 @@
+{
+  "colors": {
+    "basics": {
+      "black": "#000000",
+      "white": "#FFFFFF",
+      "red": "#AA0000",
+      "red-bright": "#EECCCC",
+      "red-brighter": "#F6E5E5",
+      "hacienda": "#937A1B",
+      "grey-dark": "#979797",
+      "grey-bright": "#E8E3E3",
+      "grey-divider": "#CACACA",
+      "grey-navigation": "#F1F1F1",
+      "grey-meta-navigation": "#A8A8A8",
+      "grey-home": "#F5F5F5",
+      "grey-divider-bright": "#E7E7E7"
+    },
+    "secondary": {
+      "dark": "#B09323",
+      "dark-hover": "#BCA344",
+      "bright": "#EBE4C8",
+      "brighter": "#F7F4E9"
+    }
+  }
+}

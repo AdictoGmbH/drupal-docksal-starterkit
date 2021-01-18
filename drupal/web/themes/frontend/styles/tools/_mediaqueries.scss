@@ -15,11 +15,7 @@ $mqResponsive: true;
  * across team members. It will improve communication between
  * stakeholders, designers, developers, and testers.
  */
-$mqBreakpoints: (
-  small: $sizeBreakpointSmall,
-  medium: $sizeBreakpointMedium,
-  large: $sizeBreakpointLarge
-);
+$mqBreakpoints: $breakpoints;
 
 /**
  * Define the breakpoint from the $mqBreakpoints list that should
@@ -48,16 +44,16 @@ $mqShowBreakpoints: (small, medium, large);
  * Media Query mixin
  * Usage:
  * .element {
- *     @include mq($from: mobile) {
+ *     @include mq($from: small) {
  *         color: red;
  *     }
- *     @include mq($to: tablet) {
+ *     @include mq($to: medium) {
  *         color: blue;
  *     }
- *     @include mq(mobile, tablet) {
+ *     @include mq(small, medium) {
  *         color: green;
  *     }
- *     @include mq($from: tablet, $and: '(orientation: landscape)') {
+ *     @include mq($from: medium, $and: '(orientation: landscape)') {
  *         color: teal;
  *     }
  *     @include mq(950px) {

@@ -1,0 +1,35 @@
+/*
+ * @file
+ * Provides the layout styles for two-column layout section.
+ */
+
+.l-columns--twocol-75-25 > .l-column + .l-column {
+  margin-top: 1.75rem;
+}
+
+@media (min-width: 64em) {
+  .l-columns--twocol-75-25 {
+    display: flex;
+    flex-wrap: wrap;
+    margin: -0.4375rem;
+  }
+
+  .l-columns--twocol-75-25 > .l-column {
+    padding: 0.4375rem;
+    min-width: 0;
+  }
+
+  .l-columns--twocol-75-25 > .l-column--first {
+    flex-basis: calc(100% / 4 * 3);
+    max-width: calc(100% / 4 * 3); /* IE */
+  }
+
+  .l-columns--twocol-75-25 > .l-column--second {
+    flex-basis: calc(100% / 4);
+    max-width: calc(100% / 4); /* IE */
+  }
+
+  .l-columns--twocol-75-25 > .l-column + .l-column {
+    margin-top: 0;
+  }
+}

@@ -4,7 +4,7 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const SVGSpritemapPlugin = require('svg-spritemap-webpack-plugin');
 const globImporter = require('node-sass-glob-importer');
-const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
+const jsonImporter = require('node-sass-json-importer');
 const autoprefixer = require('autoprefixer');
 const Fiber = require('fibers');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
@@ -25,29 +25,29 @@ module.exports = {
   },
   module: {
     rules: [{
-        test: /\.(config.js)$/,
-        use: [
-          {
-            loader: 'file-loader',
-            options: {
-              name: '[path][name].[ext]',
-              outputPath: './'
-            }
+      test: /\.(config.js)$/,
+      use: [
+        {
+          loader: 'file-loader',
+          options: {
+            name: '[path][name].[ext]',
+            outputPath: './'
           }
-        ]
-      },
+        }
+      ]
+    },
       {
         test: /\.vue$/,
         loader: 'vue-loader',
       },
       {
-        test: /\.(png|jpe?g|gif)$/,
+        test: /\.(png|jpe?g|gif|xml|svg)$/,
         use: [{
-            loader: 'file-loader',
-            options: {
-              name: 'images/[name].[ext]?[hash]',
-            },
+          loader: 'file-loader',
+          options: {
+            name: 'images/[name].[ext]?[hash]',
           },
+        },
           {
             loader: 'img-loader',
             options: {
@@ -96,14 +96,14 @@ module.exports = {
               sourceMap: isDev,
               sassOptions: {
                 fiber: Fiber,
-                importer: globImporter()
+                importer: [globImporter(), jsonImporter()]
               },
             },
           },
         ],
       },
       {
-        test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+        test: /\.(woff(2)?)(\?v=\d+\.\d+\.\d+)?$/,
         use: [{
           loader: 'file-loader',
           options: {
@@ -129,7 +129,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "css/[name].css",
     }),
-    new CleanWebpackPlugin(),
+    new CleanWebpackPlugin({
+      cleanStaleWebpackAssets: false
+    }),
     new SVGSpritemapPlugin(path.resolve(__dirname, 'images/icons/**/*.svg'), {
       output: {
         filename: 'sprites/sprite.svg',
@@ -153,56 +155,7 @@ module.exports = {
       }
     }),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].css',
-    }),
-    new BrowserSyncPlugin({
-      proxy: {
-        target: 'https://drupal-docksal-starterkit.docksal/',
-        proxyReq: [
-          function(proxyReq) {
-            proxyReq.setHeader('Cache-Control', 'no-cache, no-store');
-          }
-        ]
-      },
-      browser: 'chrome',
-      open: false,
-      https: false,
-      notify: true,
-      logConnections: true,
-      reloadOnRestart: true,
-      injectChanges: true,
-      online: true,
-      // reloadDelay: 500,
-      ghostMode: {
-        clicks: false,
-        forms: false,
-        scroll: false,
-      },
-      files: [
-        {
-          match: ['**/*.css', '**/*.js'],
-          fn: (event, file) => {
-            if (event == 'change') {
-              const bs = require("browser-sync").get("bs-webpack-plugin");
-              if (file.split('.').pop()=='js') {
-                bs.reload();
-              } else {
-                bs.stream();
-              }
-            }
-          }
-        }
-      ]
-    }, {
-      // prevent BrowserSync from reloading the page
-      // and let Webpack Dev Server take care of this
-      reload: false,
-      injectCss: true,
-      name: 'bs-webpack-plugin'
-    }),
-  ],
-  watchOptions: {
-    aggregateTimeout: 300,
-    ignored: ['**/*.woff', '**/*.json', '**/*.woff2', '**/*.jpg', '**/*.png', '**/*.svg', 'node_modules'],
-  }
+      filename: 'css/[name].css'
+    })
+  ]
 };

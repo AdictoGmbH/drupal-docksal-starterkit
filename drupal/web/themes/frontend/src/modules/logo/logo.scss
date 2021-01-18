@@ -1,0 +1,11 @@
+.m-logo {
+  display: block;
+  width: pxToRem(240);
+  box-sizing: content-box;
+
+  img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+}

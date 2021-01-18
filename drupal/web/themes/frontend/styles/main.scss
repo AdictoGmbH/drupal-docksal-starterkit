@@ -3,10 +3,8 @@
    ====== */
 
 $path: ".." !default;
-$output-bourbon-deprecation-warnings: false;
 
 // Assets
-@import "../node_modules/bourbon/core/bourbon";
 @import "../node_modules/normalize.css/normalize";
 
 @import "settings/settings";
@@ -31,3 +29,14 @@ $output-bourbon-deprecation-warnings: false;
 
 // Modules
 @import "../src/modules/**/*.scss";
+
+// Templates
+@import "templates/**/*.scss";
+
+// WORKAROUND: Layouts
+@import "../layouts/onecol_100/layout-onecol-100.css";
+@import "../layouts/threecol_33/layout-threecol-33.css";
+@import "../layouts/twocol_50/layout-twocol-50.css";
+@import "../layouts/twocol_66_33/layout-twocol-66-33.css";
+@import "../layouts/twocol_33_66/layout-twocol-33-66.css";
+@import "../layouts/twocol_75_25/layout-twocol-75-25.css";

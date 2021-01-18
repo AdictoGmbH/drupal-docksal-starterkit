@@ -1,0 +1,113 @@
+/* ==|====================
+  Search styles
+======================= */
+
+.search-form {
+  margin: pxToRem($offset-small) 0 pxToRem($offset-medium);
+  max-width: pxToRem(800);
+
+  .form-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  input[type="search"]::-webkit-search-decoration,
+  input[type="search"]::-webkit-search-cancel-button,
+  input[type="search"]::-webkit-search-results-button,
+  input[type="search"]::-webkit-search-results-decoration {
+    -webkit-appearance:none;
+  }
+
+  .form-submit-wrapper {
+    display: inline-block;
+    width: 100%;
+    margin-top: pxToRem($offset-basic);
+    max-width: none;
+
+    .form-submit {
+      border: 1px solid map-get(map-get($colors, secondary), dark);
+      min-width: pxToRem(200);
+
+      &:hover,
+      [data-focus-source="key"] &:focus {
+        border: 1px solid map-get(map-get($colors, secondary), dark-hover);
+      }
+    }
+
+    .form-submit-icon {
+      display: none;
+    }
+  }
+
+  .form-submit-wrapper__icon .icon--search {
+    display: block;
+  }
+
+  .form-submit-wrapper__icon .icon--send {
+    display: none;
+  }
+
+  .form-item-keys {
+    display: inline-block;
+    flex: 1;
+    max-width: none;
+  }
+
+  .search-help-link,
+  .search-advanced {
+    display: none;
+  }
+}
+
+@include mq($from: small) {
+  .search-form {
+    .form-wrapper {
+      flex-direction: row;
+    }
+
+    .form-submit-wrapper {
+      width: auto;
+      margin-top: 0;
+      margin-left: pxToRem($offset-basic);
+    }
+  }
+}
+
+.search-results {
+  padding: 0;
+  margin: pxToRem($offset-small) 0 pxToRem($offset-medium);
+  max-width: pxToRem(800);
+
+  li {
+    border-bottom: 1px solid map-get(map-get($colors, basics), grey-divider-bright);
+    padding: pxToRem($offset-small) 0;
+  }
+
+  a {
+    text-decoration: none;
+    color: map-get(map-get($colors, basics), black);
+  }
+
+  .search-result__snippet {
+    margin: 0;
+  }
+
+  .search-result__snippet strong {
+    font-weight: 700;
+    color: map-get(map-get($colors, basics), hacienda);
+  }
+
+  a:hover,
+  [data-focus-source="key"] &:focus {
+    .search-result__title {
+      color: map-get(map-get($colors, basics), hacienda);
+    }
+  }
+}
+
+// Print
+@media print {
+  .search-form .form-submit-wrapper .form-submit {
+    display: none;
+  }
+}

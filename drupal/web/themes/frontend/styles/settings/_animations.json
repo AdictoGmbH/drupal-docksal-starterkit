@@ -1,0 +1,8 @@
+{
+  "animations": {
+    "duration": {
+      "default": 340,
+      "fancy": 140
+    }
+  }
+}

@@ -4,6 +4,7 @@ module.exports = {
     'addTest'
   ],
   'feature-detects': [
+    'css/objectfit'
   ]
 };
 

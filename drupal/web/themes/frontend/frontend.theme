@@ -6,6 +6,7 @@
  */
 
 use Drupal\Component\Utility\Html;
+use Drupal\Core\Template\Attribute;
 
 /**
  * Hook preprocess HTML.
@@ -34,6 +35,14 @@ function frontend_preprocess_html(&$variables) {
     $base_svg = file_get_contents($base_svg);
     $base_svg = str_replace('<svg ', '<svg style="display:none;"', $base_svg);
     $variables['base_svg'] = $base_svg;
+  }
+}
+
+function frontend_preprocess_block(&$variables) {
+  $variables['block'] = '';
+  // Needed to use graphql twig for blocks
+  if (!empty($variables['content']['#block_content'])) {
+    $variables['block'] = $variables['content']['#block_content']->id();
   }
 }
 
