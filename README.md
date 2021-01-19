@@ -29,6 +29,25 @@ fin init
 ### Fix services link
 Replace `/sites/development.services.yml` in `drupal/web/sites/default/settings.local.php` with `/sites/local.services.yml`.
 
+### Install packages
+```
+cd drupal
+composer install
+cd web
+composer install
+```
+
+### Instance setup
+```
+drush site-install standard --site-name=drupal-docksal-starterkit --account-name=admin --account-pass=drupal
+```
+
+### Install default db
+```
+drush sql-cli < ../db_dump/drupal.sql
+drush cr
+```
+
 ---
 
 ### Add Drush local config
