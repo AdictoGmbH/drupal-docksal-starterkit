@@ -49,7 +49,7 @@
           '@click': item.below ? 'toggle' : ''
         }
       %}
-      <li{{ item.attributes.addClass(classes) }}{% if item.below %} is="accordionComponent" inline-template{% endif %}>
+      <accordion-component{{ item.attributes.addClass(classes) }}{% if item.below %} {% endif %}>
         {% if item.below %}<div v-bind:class="{ 'is-expanded': isVisible }">{% endif %}
           {{ link(item.title, item.url, linkAttributes) }}
           {% if item.below %}
@@ -61,7 +61,7 @@
             </transition>
           {% endif %}
         {% if item.below %}</div>{% endif %}
-      </li>
+      </accordion-component>
     {% endfor %}
     </ul>
   {% endif %}

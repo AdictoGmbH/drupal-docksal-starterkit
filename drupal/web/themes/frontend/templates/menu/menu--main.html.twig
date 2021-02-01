@@ -21,8 +21,8 @@
 {% import _self as menus %}
 
 {#
-  We call a macro which calls itself to render the full tree.
-  @see https://twig.symfony.com/doc/1.x/tags/macro.html
+We call a macro which calls itself to render the full tree.
+@see https://twig.symfony.com/doc/1.x/tags/macro.html
 #}
 {{ menus.menu_links(items, attributes, 0) }}
 
@@ -30,44 +30,52 @@
   {% import _self as menus %}
   {% if items %}
     {% if menu_level == 0 %}
-      <ul{{ attributes.addClass('m-header__navigation-list') }} data-init="menu">
-    {% else %}
-      <ul class="m-header__navigation-list m-header__navigation-list--l{{ menu_level }}">
+<ul{{ attributes.addClass('m-header__navigation-list') }} data-init="menu">
+  {% else %}
+  <ul class="m-header__navigation-list m-header__navigation-list--l{{ menu_level }}">
     {% endif %}
     {% for item in items %}
       {% set description = item.original_link.getDescription() %}
-      {%
-        set classes = [
-          'm-header__navigation-item',
-          'm-header__navigation-item--l' ~ menu_level,
-          item.in_active_trail ? 'm-header__navigation-item--active',
-          item.below ? 'm-header__navigation-item--dropdown',
-          description ? 'm-header__navigation-item--' ~ description,
-        ]
-      %}
-      {%
-        set linkAttributes = {
-          'class': 'm-header__navigation-link m-header__navigation-link--l' ~ menu_level
-        }
-      %}
+      {% set classes = [
+        'm-header__navigation-item',
+        'm-header__navigation-item--l' ~ menu_level,
+        item.in_active_trail ? 'm-header__navigation-item--active',
+        item.below ? 'm-header__navigation-item--dropdown',
+        description ? 'm-header__navigation-item--' ~ description,
+      ] %}
+      {% set linkAttributes = {
+        'class': 'm-header__navigation-link m-header__navigation-link--l' ~ menu_level
+      } %}
       {% if item.below %}
-        <div is="accordionComponent" inline-template>
-          <li{{ item.attributes.addClass(classes) }} v-bind:class="{ 'is-expanded': isVisible }" @mouseenter="toggle" @mouseleave="toggle">
-            <button class="{{ linkAttributes.class }}" type="button" aria-haspopup="true" aria-expanded="false" @click="toggle">{{ item.title }}</button>
-{#            {{ svg_icon('plus', 'm-header__navigation-icon') }}#}
-            <transition @enter="enterHeight" @leave="leaveHeight">
+        <accordion-component v-slot="{ isVisible, enterHeight, leaveHeight, toggle }">
+          <li{{ item.attributes.addClass(classes) }}
+            v-bind:class="{ 'is-expanded': isVisible }"
+            @mouseenter="toggle"
+            @mouseleave="toggle"
+          >
+            <button
+              class="{{ linkAttributes.class }}"
+              type="button"
+              aria-haspopup="true"
+              aria-expanded="false"
+              @click="(e) => {toggle(e)}"
+            >{{ item.title }}{% include '@components/icon/icon.twig' with {'name': 'plus', 'class': 'm-header__navigation-icon'} %}</button>
+            <transition
+              @enter="(element, done) => {enterHeight(element, done)}"
+              @leave="(element, done) => {leaveHeight(element, done)}"
+            >
               <div class="m-header__navigation-dropdown" v-show="isVisible" style="display: none;">
                 {{ menus.menu_links(item.below, attributes, menu_level + 1) }}
               </div>
             </transition>
           </li>
-        </div>
+        </accordion-component>
       {% else %}
         <li{{ item.attributes.addClass(classes) }}>
           {{ link(item.title, item.url, linkAttributes) }}
         </li>
       {% endif %}
     {% endfor %}
-    </ul>
+  </ul>
   {% endif %}
 {% endmacro %}

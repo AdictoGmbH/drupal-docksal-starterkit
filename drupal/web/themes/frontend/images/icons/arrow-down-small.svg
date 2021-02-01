@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
+  <defs/>
+  <defs>
+    <path id="arrow-down-small-a" d="M10.59.59L6 5.17 1.41.59 0 2l6 6 6-6z"/>
+  </defs>
+  <use fill-rule="nonzero" transform="translate(6 8)" xlink:href="#arrow-down-small-a"/>
+</svg>

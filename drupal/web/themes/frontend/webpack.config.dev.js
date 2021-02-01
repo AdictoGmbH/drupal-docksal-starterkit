@@ -1,21 +1,18 @@
-const merge = require('webpack-merge');
+const { merge } = require('webpack-merge');
 const webpackConfig = require('./webpack.config');
 const SourceMapDevToolPlugin = require('webpack/lib/SourceMapDevToolPlugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const FilewatcherPlugin = require('filewatcher-webpack-plugin');
 const BrowserSyncPlugin = require('browser-sync-webpack-plugin');
 const BrowserSync = require("browser-sync");
 const throttle = require('lodash.throttle');
 const { exec } = require('child_process');
 
-let filewatcherReady = false;
-
-function getBrowserSyncInstance() {
+function getBrowserSyncInstance () {
   return BrowserSync.get('bs-webpack-plugin');
 }
 
-function executeCommand(cmd, type) {
+function executeCommand (cmd, type) {
   return throttle((file, event) => {
     // console.log(type, file);
 
@@ -45,6 +42,7 @@ const colorGroups = require('./styles/settings/_colors.json').colors;
 
 module.exports = merge(webpackConfig, {
   mode: 'development',
+  watch: true,
   devtool: 'eval-source-map',
   module: {
     rules: [
@@ -55,9 +53,11 @@ module.exports = merge(webpackConfig, {
     ]
   },
   plugins: [
-    new CopyPlugin([
-      { from: 'images/icons/*.svg' },
-    ]),
+    new CopyPlugin({
+      patterns: [
+        { from: 'images/icons/*.svg' }
+      ]
+    }),
     new SourceMapDevToolPlugin({
       filename: '[file].map',
       exclude: [/node_modules/, /images/, /spritemap/, /svg-sprites/]
@@ -93,20 +93,11 @@ module.exports = merge(webpackConfig, {
         };
       }
     }),
-    new FilewatcherPlugin({
-      watchFileRegex: ['./{layouts,templates,src}/**/*.twig'],
-      onAddCallback: executeCommand('fin drush cr', 'add'),
-      onUnlinkCallback: executeCommand('fin drush cr', 'unlink'),
-      onChangeCallback: executeCommand('fin drush cc render', 'change'),
-      onReadyCallback: () => {
-        filewatcherReady = true;
-      },
-    }),
     new BrowserSyncPlugin({
       proxy: {
-        target: 'https://psydrupal.docksal/',
+        target: 'https://drupal-docksal-starterkit.docksal/',
         proxyReq: [
-          function(proxyReq) {
+          function (proxyReq) {
             proxyReq.setHeader('Cache-Control', 'no-cache, no-store');
           }
         ]

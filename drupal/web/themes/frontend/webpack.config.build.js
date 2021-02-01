@@ -1,23 +1,24 @@
 // const path = require('path');
-const merge = require('webpack-merge');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const { merge } = require('webpack-merge');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const webpackConfig = require('./webpack.config');
 const MinifyPlugin = require('babel-minify-webpack-plugin');
 
 module.exports = merge(webpackConfig, {
   mode: 'production',
-  devtool: '',
+  devtool: false,
   plugins: [
     new MinifyPlugin(
       // Options
       {
-        "deadcode": false
+        'deadcode': false
       },
       // Plugins
       {
         comments: false,
         sourceMap: '',
       }
-    )
+    ),
+    new CleanWebpackPlugin(),
   ]
 });

@@ -1,7 +1,10 @@
-<template />
+<template>
+  <slot :isVisible="isVisible" :toggle="toggle"/>
+</template>
 
 <script>
 export default {
+  name: 'text',
   data() {
     return {
       isVisible: false

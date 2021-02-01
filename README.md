@@ -42,9 +42,20 @@ composer install
 drush site-install standard --site-name=drupal-docksal-starterkit --account-name=admin --account-pass=drupal
 ```
 
-### Install default db
+### Copy used icon for menu
+```
+cd drupal/web
+mkdir -p sites/default/files/icons/svgs
+cd themes/frontend
+cp images/icons/menu.svg ../../sites/default/files/icons/svgs/
+
+```
+
+### Install default db (and generate sprites)
+Needs to happen after copying the icon
 ```
 drush sql-cli < ../db_dump/drupal.sql
+drush generate-sprites
 drush cr
 ```
 

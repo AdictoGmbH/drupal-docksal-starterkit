@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24">
-  <defs/>
-  <defs>
-    <path id="shield-a" d="M8 .833L.5 4.167v5c0 4.625 3.2 8.95 7.5 10 4.3-1.05 7.5-5.375 7.5-10v-5L8 .833zm0 9.159h5.833c-.441 3.433-2.733 6.491-5.833 7.45V10H2.167V5.25L8 2.658v7.334z"/>
-  </defs>
-  <use fill-rule="nonzero" transform="translate(4 2)" xlink:href="#shield-a"/>
-</svg>

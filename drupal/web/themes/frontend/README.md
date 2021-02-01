@@ -8,6 +8,8 @@ npm install
 ```
 
 Run watcher
+
+To see the static color and icon preview open the `dist/index.html` in your browser after starting dev.
 ```
 npm run dev
 ```

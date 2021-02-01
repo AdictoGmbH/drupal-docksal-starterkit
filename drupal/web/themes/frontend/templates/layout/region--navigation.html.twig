@@ -13,20 +13,5 @@
  */
 #}
 {% if content %}
-  <div is="accordionComponent" inline-template mobile ref="headerMenu">
-    <div class="m-header__menu" v-bind:class="{ 'is-expanded': isVisible }">
-      <div class="m-header__menu-wrapper">
-        <button class="m-header__menu-toggle" @click="toggle" type="button" aria-haspopup="true" v-bind:aria-expanded="isVisible" aria-label="{{ 'Menu'|t }}">
-{#          {{ svg_icon('menu', 'm-header__menu-toggle-icon') }}#}
-        </button>
-        <transition @enter="enterHeight" @leave="leaveHeight">
-          <div class="m-header__menu-inner" v-show="isVisible">
-            <div class="m-header__menu-content">
-              {{ content }}
-            </div>
-          </div>
-        </transition>
-      </div>
-    </div>
-  </div>
+  {{ content }}
 {% endif %}

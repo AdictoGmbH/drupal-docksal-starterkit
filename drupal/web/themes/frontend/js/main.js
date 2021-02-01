@@ -15,23 +15,41 @@ import './helpers/breakpoint';
 // Modules
 import '../src/modules/favicon/favicon';
 import '../src/modules/logo/logo';
-import text from '../src/modules/text/text.js';
-
 // Vue app
-import Vue from 'vue';
-import './App.vue';
+import { createApp } from 'vue';
+import text from '../src/modules/text/text.vue';
+import textElement from '../src/modules/text/text';
+import accordion from '../src/components/accordion/accordion.vue';
+import header from '../src/modules/header/header.vue';
 
 window.addEventListener('DOMContentLoaded', async function () {
   await loadPolyfills();
 
   focusSource();
 
-  new Vue({
-    el: '#app',
+  const vueApp = createApp({
     mounted () {
       lazyload.update();
     }
   });
+
+  vueApp.component('text-component', text);
+  vueApp.component('accordion-component', accordion);
+  vueApp.component('header-component', header);
+
+  vueApp.component('button-counter', {
+    data() {
+      return {
+        count: 0
+      };
+    },
+    template: `
+    <button v-on:click="count++">
+      You clicked me {{ count }} times.
+    </button>`
+  });
+
+  vueApp.mount('#app');
 
   // Better exposed filters
   if (document.querySelector('.views-exposed-form input[type="submit"]')) {
@@ -95,7 +113,7 @@ window.addEventListener('load', function () {
 
   Drupal.behaviors.text = {
     attach: function attach (context) {
-      text.init(context);
+      textElement.init(context);
     }
   };
 

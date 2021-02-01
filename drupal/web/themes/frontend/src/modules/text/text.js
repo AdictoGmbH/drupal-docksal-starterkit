@@ -7,7 +7,7 @@
 
 const instance = {};
 const defaults = {
-  container: ".m-text"
+  container: ".m-text-element"
 };
 const settings = {};
 

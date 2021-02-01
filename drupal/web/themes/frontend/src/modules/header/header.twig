@@ -1,13 +1,34 @@
-<div is="headerComponent" inline-template ref="header">
-  <header class="m-header" role="banner">
-    <div ref="headerWrapper" class="m-header__wrapper">
-      <div class="l-container">
-        <div class="m-header__inner">
-          {{ page.header }}
-          {{ page.navigation }}
-        </div>
+<header-component v-slot="{heightTransitionStart, heightTransitionEnd}">
+  {{ page.header }}
+  <accordion-component
+    v-slot="{ isVisible, enterHeight, leaveHeight, toggle }"
+    mobile
+    @height-transition-start="heightTransitionStart"
+    @height-transition-end="heightTransitionEnd"
+  >
+    <div class="m-header__menu" v-bind:class="{ 'is-expanded': isVisible }">
+      <div class="m-header__menu-wrapper">
+        <button
+          class="m-header__menu-toggle"
+          @click="(e) => toggle(e)"
+          type="button"
+          aria-haspopup="true"
+          v-bind:aria-expanded="isVisible"
+          aria-label="{{ 'Menu'|t }}"
+        >
+          {% include '@components/icon/icon.twig' with {'name': 'menu'} %}
+        </button>
+        <transition
+          @enter="(element, done) => {enterHeight(element, done)}"
+          @leave="(element, done) => {leaveHeight(element, done)}"
+        >
+          <div class="m-header__menu-inner" v-show="isVisible">
+            <div class="m-header__menu-content">
+              {{ page.navigation }}
+            </div>
+          </div>
+        </transition>
       </div>
     </div>
-    <span class="m-header__sticky" ref="stickyIndicator"></span>
-  </header>
-</div>
+  </accordion-component>
+</header-component>

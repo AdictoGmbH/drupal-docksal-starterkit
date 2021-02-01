@@ -1,0 +1,25 @@
+uuid: 7f232ab1-1848-4ac7-882e-77c561e4d9ed
+langcode: en
+status: true
+dependencies:
+  config:
+    - system.menu.footer-meta
+  module:
+    - system
+  theme:
+    - frontend
+id: footermeta
+theme: frontend
+region: footer
+weight: 0
+provider: null
+plugin: 'system_menu_block:footer-meta'
+settings:
+  id: 'system_menu_block:footer-meta'
+  label: 'Footer Meta'
+  provider: system
+  label_display: '0'
+  level: 1
+  depth: 0
+  expand_all_items: false
+visibility: {  }

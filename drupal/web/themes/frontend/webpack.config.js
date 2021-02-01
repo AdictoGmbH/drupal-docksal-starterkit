@@ -8,18 +8,18 @@ const jsonImporter = require('node-sass-json-importer');
 const autoprefixer = require('autoprefixer');
 const Fiber = require('fibers');
 const FixStyleOnlyEntriesPlugin = require('webpack-fix-style-only-entries');
-const VueLoaderPlugin = require('vue-loader/lib/plugin');
+const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
   entry: {
-    main: ['./js/main.js', './styles/main.scss'],
-    drupal: ['./styles/drupal.scss'],
+    main: './js/main.js',
+    style: './styles/main.scss',
+    drupal: './styles/drupal.scss'
   },
   output: {
-    devtoolLineToLine: true,
     path: path.resolve(__dirname, 'dist'),
-    chunkFilename: 'js/async/[name].chunk.js',
     pathinfo: true,
+    chunkFilename: 'js/async/[name].chunk.js',
     filename: 'js/[name].js',
     publicPath: '/themes/frontend/dist/'
   },
@@ -38,7 +38,7 @@ module.exports = {
     },
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
+        loader: 'vue-loader'
       },
       {
         test: /\.(png|jpe?g|gif|xml|svg)$/,
@@ -58,7 +58,7 @@ module.exports = {
       },
       {
         test: /modernizrrc\.js$/,
-        loader: 'expose-loader?Modernizr!webpack-modernizr-loader',
+        use: ['expose-loader?Modernizr', 'webpack-modernizr-loader']
       },
       {
         test: /\.js$/,
@@ -73,8 +73,8 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '../'
-            }
+              publicPath: '../',
+            },
           },
           {
             loader: 'css-loader',
@@ -120,14 +120,14 @@ module.exports = {
     ],
     extensions: ['.js', '.vue', '.json'],
     alias: {
-      'vue$': 'vue/dist/vue.esm.js',
+      'vue': 'vue/dist/vue.esm-bundler.js'
     },
   },
   plugins: [
     new VueLoaderPlugin(),
     new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({
-      filename: "css/[name].css",
+      filename: 'css/[name].css'
     }),
     new CleanWebpackPlugin({
       cleanStaleWebpackAssets: false
@@ -135,6 +135,7 @@ module.exports = {
     new SVGSpritemapPlugin(path.resolve(__dirname, 'images/icons/**/*.svg'), {
       output: {
         filename: 'sprites/sprite.svg',
+        svgo: false,
         svg: {
           sizes: false
         }
@@ -142,6 +143,7 @@ module.exports = {
       sprite: {
         prefix: false,
         gutter: 0,
+        idify: false,
         generate: {
           title: false,
           symbol: true,

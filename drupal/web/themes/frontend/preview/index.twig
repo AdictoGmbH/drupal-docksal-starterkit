@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>{{ title }}</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<style>
+			th {
+				text-align: left;
+			}
+			th,
+			td {
+				padding-right: 1em;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>Colors</h2>
+		<table>
+			<tr>
+				<th>Preview</th>
+				<th>Name</th>
+				<th>Sass variable</th>
+				<th>Utility class</th>
+			</tr>
+			{% for group in colors %}
+				{% for color in group.entries %}
+					<tr>
+						<td style="background: {{ color.value }}"></td>
+						<td>{{ color.name }}</td>
+						<td>map-get(map-get($colors, "{{ group.key }}"), "{{ color.name }}")</td>
+						<td>.u-colors-{{ group.key }}-{{ color.name }}</td>
+					</tr>
+				{% endfor %}
+			{% endfor %}
+		</table>
+		<hr>
+		<h2>Icons</h2>
+		<table>
+			<tr>
+				<th>Icon</th>
+				<th>Original file name</th>
+				<th>New file name</th>
+				<th>Symbol name in Drupal</th>
+			</tr>
+			{% for icon in icons %}
+				<tr>
+					<td><img src="images/icons/{{ icon.new }}.svg"></td>
+					<td>{{ icon.original }}</td>
+					<td>{{ icon.new }}</td>
+					<td>{{ icon.name }}</td>
+				</tr>
+			{% endfor %}
+		</table>
+	</body>
+</html>

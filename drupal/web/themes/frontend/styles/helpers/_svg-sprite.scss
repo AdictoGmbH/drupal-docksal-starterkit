@@ -1,5 +1,4 @@
 $sprites: (
-    'academic-cap': "/themes/frontend/dist/sprites/sprite.svg#academic-cap-view",
     'arrow-down-circle-filled': "/themes/frontend/dist/sprites/sprite.svg#arrow-down-circle-filled-view",
     'arrow-down-circle': "/themes/frontend/dist/sprites/sprite.svg#arrow-down-circle-view",
     'arrow-down-small': "/themes/frontend/dist/sprites/sprite.svg#arrow-down-small-view",
@@ -10,24 +9,12 @@ $sprites: (
     'arrow-right': "/themes/frontend/dist/sprites/sprite.svg#arrow-right-view",
     'arrow-up-circle': "/themes/frontend/dist/sprites/sprite.svg#arrow-up-circle-view",
     'arrow-up': "/themes/frontend/dist/sprites/sprite.svg#arrow-up-view",
-    'bed': "/themes/frontend/dist/sprites/sprite.svg#bed-view",
-    'book': "/themes/frontend/dist/sprites/sprite.svg#book-view",
-    'bus': "/themes/frontend/dist/sprites/sprite.svg#bus-view",
-    'calendar-entry': "/themes/frontend/dist/sprites/sprite.svg#calendar-entry-view",
     'calendar': "/themes/frontend/dist/sprites/sprite.svg#calendar-view",
-    'car': "/themes/frontend/dist/sprites/sprite.svg#car-view",
-    'case-plus': "/themes/frontend/dist/sprites/sprite.svg#case-plus-view",
-    'case': "/themes/frontend/dist/sprites/sprite.svg#case-view",
-    'checkbox-checked': "/themes/frontend/dist/sprites/sprite.svg#checkbox-checked-view",
-    'checkbox': "/themes/frontend/dist/sprites/sprite.svg#checkbox-view",
     'close': "/themes/frontend/dist/sprites/sprite.svg#close-view",
     'download': "/themes/frontend/dist/sprites/sprite.svg#download-view",
-    'emergency': "/themes/frontend/dist/sprites/sprite.svg#emergency-view",
-    'handshake': "/themes/frontend/dist/sprites/sprite.svg#handshake-view",
     'home': "/themes/frontend/dist/sprites/sprite.svg#home-view",
     'info': "/themes/frontend/dist/sprites/sprite.svg#info-view",
     'mail': "/themes/frontend/dist/sprites/sprite.svg#mail-view",
-    'marker-plus': "/themes/frontend/dist/sprites/sprite.svg#marker-plus-view",
     'marker': "/themes/frontend/dist/sprites/sprite.svg#marker-view",
     'menu': "/themes/frontend/dist/sprites/sprite.svg#menu-view",
     'minus': "/themes/frontend/dist/sprites/sprite.svg#minus-view",
@@ -35,19 +22,11 @@ $sprites: (
     'phone-mobile': "/themes/frontend/dist/sprites/sprite.svg#phone-mobile-view",
     'phone': "/themes/frontend/dist/sprites/sprite.svg#phone-view",
     'plus': "/themes/frontend/dist/sprites/sprite.svg#plus-view",
-    'print': "/themes/frontend/dist/sprites/sprite.svg#print-view",
-    'radiobutton-checked': "/themes/frontend/dist/sprites/sprite.svg#radiobutton-checked-view",
-    'radiobutton': "/themes/frontend/dist/sprites/sprite.svg#radiobutton-view",
     'search': "/themes/frontend/dist/sprites/sprite.svg#search-view",
-    'send': "/themes/frontend/dist/sprites/sprite.svg#send-view",
-    'shield': "/themes/frontend/dist/sprites/sprite.svg#shield-view"
+    'send': "/themes/frontend/dist/sprites/sprite.svg#send-view"
 );
 
 $sizes: (
-    'academic-cap': (
-        'width': 24px,
-        'height': 24px
-    ),
     'arrow-down-circle-filled': (
         'width': 24px,
         'height': 24px
@@ -88,43 +67,7 @@ $sizes: (
         'width': 24px,
         'height': 24px
     ),
-    'bed': (
-        'width': 24px,
-        'height': 24px
-    ),
-    'book': (
-        'width': 24px,
-        'height': 24px
-    ),
-    'bus': (
-        'width': 24px,
-        'height': 24px
-    ),
-    'calendar-entry': (
-        'width': 24px,
-        'height': 24px
-    ),
     'calendar': (
-        'width': 24px,
-        'height': 24px
-    ),
-    'car': (
-        'width': 24px,
-        'height': 24px
-    ),
-    'case-plus': (
-        'width': 24px,
-        'height': 24px
-    ),
-    'case': (
-        'width': 24px,
-        'height': 24px
-    ),
-    'checkbox-checked': (
-        'width': 24px,
-        'height': 24px
-    ),
-    'checkbox': (
         'width': 24px,
         'height': 24px
     ),
@@ -133,14 +76,6 @@ $sizes: (
         'height': 24px
     ),
     'download': (
-        'width': 24px,
-        'height': 24px
-    ),
-    'emergency': (
-        'width': 24px,
-        'height': 24px
-    ),
-    'handshake': (
         'width': 24px,
         'height': 24px
     ),
@@ -153,10 +88,6 @@ $sizes: (
         'height': 24px
     ),
     'mail': (
-        'width': 24px,
-        'height': 24px
-    ),
-    'marker-plus': (
         'width': 24px,
         'height': 24px
     ),
@@ -188,27 +119,11 @@ $sizes: (
         'width': 24px,
         'height': 24px
     ),
-    'print': (
-        'width': 24px,
-        'height': 24px
-    ),
-    'radiobutton-checked': (
-        'width': 24px,
-        'height': 24px
-    ),
-    'radiobutton': (
-        'width': 24px,
-        'height': 24px
-    ),
     'search': (
         'width': 24px,
         'height': 24px
     ),
     'send': (
-        'width': 24px,
-        'height': 24px
-    ),
-    'shield': (
         'width': 24px,
         'height': 24px
     )
@@ -273,6 +188,11 @@ $variables: (
 
     @if $include-size {
         $size: map-get($sizes, $name);
-        background-size: map-get($size, width) map-get($size, height);
+        @if $include-size == true {
+            background-size: map-get($size, width) map-get($size, height);
+        } @else if $include-size == 'box' {
+            width: map-get($size, width);
+            height: map-get($size, height);
+        }
     }
 }

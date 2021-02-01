@@ -7,7 +7,7 @@
   // Position above content when being sticky and/or expanded
   z-index: map-get($z-indices, header);
   // Do not collapse on `.m-header__wrapper` being sticky
-  min-height: pxToRem(168);
+  min-height: pxToRem(56);
 
   &.is-sticky {
 
@@ -144,7 +144,7 @@
 
       .m-header__navigation-link {
         background: map-get(map-get($colors, basics), red-brighter);
-        min-height: pxToRem(55);
+        min-height: pxToRem(56);
         position: relative;
       }
 
@@ -237,7 +237,7 @@
 @include mq($to: medium) {
 
   .m-header {
-    min-height: pxToRem(140);
+    min-height: pxToRem(56);
 
     &.is-sticky {
 
@@ -267,8 +267,8 @@
 
   .m-header__region {
     &--header {
-      padding: pxToRem(23) pxToRem($gutter-micro) pxToRem(77);
-      min-height: pxToRem(140);
+      padding: pxToRem(23) pxToRem($gutter-micro) pxToRem(23);
+      min-height: pxToRem(56);
     }
   }
 
@@ -277,7 +277,7 @@
     position: absolute;
     z-index: 1;
     right: 0;
-    bottom: 0;
+    bottom: pxToRem(23);
     padding: 0;
     background: map-get(map-get($colors, basics), grey-navigation);
     border: 0;
@@ -285,11 +285,6 @@
     border-bottom: 0px solid transparent;
     transition: border-bottom-color $basic-transition;
     cursor: pointer;
-
-    &[aria-expanded="true"] {
-      bottom: -1px;
-      border-bottom: 1px solid map-get(map-get($colors, basics), grey-navigation);
-    }
   }
 
   .m-header__menu-inner {
