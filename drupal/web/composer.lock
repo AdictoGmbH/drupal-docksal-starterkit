@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "d33b92d9a3e3514a61c12199fecd5109",
+    "content-hash": "3fe46c3d6c896ea5dd830a7a96eff20b",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -1107,69 +1107,6 @@
             "time": "2017-02-14T19:40:03+00:00"
         },
         {
-            "name": "defuse/php-encryption",
-            "version": "v2.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/defuse/php-encryption.git",
-                "reference": "0f407c43b953d571421e0020ba92082ed5fb7620"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/defuse/php-encryption/zipball/0f407c43b953d571421e0020ba92082ed5fb7620",
-                "reference": "0f407c43b953d571421e0020ba92082ed5fb7620",
-                "shasum": ""
-            },
-            "require": {
-                "ext-openssl": "*",
-                "paragonie/random_compat": ">= 2",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "nikic/php-parser": "^2.0|^3.0|^4.0",
-                "phpunit/phpunit": "^4|^5"
-            },
-            "bin": [
-                "bin/generate-defuse-key"
-            ],
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Defuse\\Crypto\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Hornby",
-                    "email": "taylor@defuse.ca",
-                    "homepage": "https://defuse.ca/"
-                },
-                {
-                    "name": "Scott Arciszewski",
-                    "email": "info@paragonie.com",
-                    "homepage": "https://paragonie.com"
-                }
-            ],
-            "description": "Secure PHP Encryption Library",
-            "keywords": [
-                "aes",
-                "authenticated encryption",
-                "cipher",
-                "crypto",
-                "cryptography",
-                "encrypt",
-                "encryption",
-                "openssl",
-                "security",
-                "symmetric key cryptography"
-            ],
-            "time": "2018-07-24T23:27:56+00:00"
-        },
-        {
             "name": "dflydev/dot-access-data",
             "version": "v1.1.0",
             "source": {
@@ -2255,54 +2192,6 @@
             "homepage": "https://www.drupal.org/project/computed_field",
             "support": {
                 "source": "https://git.drupalcode.org/project/computed_field"
-            }
-        },
-        {
-            "name": "drupal/consumers",
-            "version": "1.11.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/consumers.git",
-                "reference": "8.x-1.11"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/consumers-8.x-1.11.zip",
-                "reference": "8.x-1.11",
-                "shasum": "2f440f4f61d5a85575504612b6b52d1d54ecd22f"
-            },
-            "require": {
-                "drupal/core": "^8 || ^9"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.11",
-                    "datestamp": "1585606458",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "e0ipso",
-                    "homepage": "https://www.drupal.org/user/550110"
-                },
-                {
-                    "name": "eojthebrave",
-                    "homepage": "https://www.drupal.org/user/79230"
-                }
-            ],
-            "description": "Declare all the consumers of your API",
-            "homepage": "https://www.drupal.org/project/consumers",
-            "support": {
-                "source": "https://git.drupalcode.org/project/consumers"
             }
         },
         {
@@ -3832,51 +3721,6 @@
             }
         },
         {
-            "name": "drupal/ief_table_view_mode",
-            "version": "2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/ief_table_view_mode.git",
-                "reference": "8.x-2.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/ief_table_view_mode-8.x-2.2.zip",
-                "reference": "8.x-2.2",
-                "shasum": "729d58b7aea7361123c3d66cab320026769623e5"
-            },
-            "require": {
-                "drupal/core": "^8.7.7 || ^9",
-                "drupal/inline_entity_form": "*"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-2.2",
-                    "datestamp": "1594504177",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "mnico",
-                    "homepage": "https://www.drupal.org/user/1119544"
-                }
-            ],
-            "description": "Defines a view mode to set up the columns of the table for the Inline Entity Form widget.",
-            "homepage": "https://www.drupal.org/project/ief_table_view_mode",
-            "support": {
-                "source": "https://git.drupalcode.org/project/ief_table_view_mode"
-            }
-        },
-        {
             "name": "drupal/imageapi_optimize",
             "version": "4.0.0-beta1",
             "source": {
@@ -4018,89 +3862,6 @@
                 "source": "https://git.drupalcode.org/project/imageapi_optimize_webp"
             },
             "time": "2020-06-22T17:06:13+00:00"
-        },
-        {
-            "name": "drupal/inline_entity_form",
-            "version": "1.0.0-rc8",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/inline_entity_form.git",
-                "reference": "8.x-1.0-rc8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/inline_entity_form-8.x-1.0-rc8.zip",
-                "reference": "8.x-1.0-rc8",
-                "shasum": "103de382dd07b4acdd6bacd5ad76628fdf0eefda"
-            },
-            "require": {
-                "drupal/core": "^8.7.7 || ^9"
-            },
-            "require-dev": {
-                "drupal/entity_reference_revisions": "^1.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "8.x-1.0-rc8",
-                    "datestamp": "1602172716",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "RC releases are not covered by Drupal security advisories."
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0-or-later"
-            ],
-            "authors": [
-                {
-                    "name": "bojanz",
-                    "homepage": "https://www.drupal.org/user/86106"
-                },
-                {
-                    "name": "dawehner",
-                    "homepage": "https://www.drupal.org/user/99340"
-                },
-                {
-                    "name": "geek-merlin",
-                    "homepage": "https://www.drupal.org/user/229048"
-                },
-                {
-                    "name": "joachim",
-                    "homepage": "https://www.drupal.org/user/107701"
-                },
-                {
-                    "name": "jsacksick",
-                    "homepage": "https://www.drupal.org/user/972218"
-                },
-                {
-                    "name": "kaythay",
-                    "homepage": "https://www.drupal.org/user/2182186"
-                },
-                {
-                    "name": "oknate",
-                    "homepage": "https://www.drupal.org/user/471638"
-                },
-                {
-                    "name": "rszrama",
-                    "homepage": "https://www.drupal.org/user/49344"
-                },
-                {
-                    "name": "slashrsm",
-                    "homepage": "https://www.drupal.org/user/744628"
-                },
-                {
-                    "name": "webflo",
-                    "homepage": "https://www.drupal.org/user/254778"
-                }
-            ],
-            "description": "Provides a widget for inline management (creation, modification, removal) of referenced entities.",
-            "homepage": "https://www.drupal.org/project/inline_entity_form",
-            "support": {
-                "source": "https://git.drupalcode.org/project/inline_entity_form"
-            }
         },
         {
             "name": "drupal/jquery_ui",
@@ -4866,73 +4627,6 @@
             }
         },
         {
-            "name": "drupal/simple_oauth",
-            "version": "5.0.3",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/simple_oauth.git",
-                "reference": "5.0.3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/simple_oauth-5.0.3.zip",
-                "reference": "5.0.3",
-                "shasum": "9f620162fd06ddcf05c1da316555f988a60c7897"
-            },
-            "require": {
-                "drupal/consumers": "^1.2",
-                "drupal/core": "^8 || ^9",
-                "lcobucci/jwt": "^3.4",
-                "league/oauth2-server": "^8.0 < 8.2",
-                "php": ">=7.0",
-                "steverhoades/oauth2-openid-connect-server": "^1.1"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "drupal": {
-                    "version": "5.0.3",
-                    "datestamp": "1607468179",
-                    "security-coverage": {
-                        "status": "covered",
-                        "message": "Covered by Drupal's security advisory policy"
-                    }
-                },
-                "drush": {
-                    "services": {
-                        "drush.services.yml": "^9"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "Mateu Aguiló Bosch",
-                    "homepage": "https://www.drupal.org/user/405824",
-                    "email": "mateu.aguilo.bosch@gmail.com"
-                },
-                {
-                    "name": "e0ipso",
-                    "homepage": "https://www.drupal.org/user/550110"
-                },
-                {
-                    "name": "mglaman",
-                    "homepage": "https://www.drupal.org/user/2416470"
-                },
-                {
-                    "name": "pcambra",
-                    "homepage": "https://www.drupal.org/user/122101"
-                }
-            ],
-            "description": "The Simple OAuth module for Drupal",
-            "homepage": "https://www.drupal.org/project/simple_oauth",
-            "support": {
-                "source": "https://git.drupalcode.org/project/simple_oauth"
-            }
-        },
-        {
             "name": "drupal/token",
             "version": "1.9.0",
             "source": {
@@ -5176,52 +4870,6 @@
             "support": {
                 "source": "https://git.drupalcode.org/project/upgrade_status"
             }
-        },
-        {
-            "name": "drupal/views_dynamic_title",
-            "version": "dev-1.x",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupalcode.org/project/views_dynamic_title.git",
-                "reference": "5a46234c36c2a86448f7ed3cd8aa9513035da832"
-            },
-            "require": {
-                "drupal/core": "~8.0"
-            },
-            "type": "drupal-module",
-            "extra": {
-                "branch-alias": {
-                    "dev-1.x": "1.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-1.x-dev",
-                    "datestamp": "1531946021",
-                    "security-coverage": {
-                        "status": "not-covered",
-                        "message": "Project has not opted into security advisory coverage!"
-                    }
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "ahebrank",
-                    "homepage": "https://www.drupal.org/user/3190515"
-                }
-            ],
-            "description": "Dynamic title for Views pages, based on filters and pagination",
-            "homepage": "https://www.drupal.org/project/views_dynamic_title",
-            "keywords": [
-                "Drupal"
-            ],
-            "support": {
-                "source": "http://cgit.drupalcode.org/views_dynamic_title",
-                "issues": "https://www.drupal.org/project/issues/views_dynamic_title"
-            },
-            "time": "2018-07-18T20:04:17+00:00"
         },
         {
             "name": "drupal/webform",
@@ -6497,79 +6145,6 @@
             "time": "2020-05-20T16:45:56+00:00"
         },
         {
-            "name": "lcobucci/jwt",
-            "version": "3.4.2",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/lcobucci/jwt.git",
-                "reference": "17cb82dd625ccb17c74bf8f38563d3b260306483"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/lcobucci/jwt/zipball/17cb82dd625ccb17c74bf8f38563d3b260306483",
-                "reference": "17cb82dd625ccb17c74bf8f38563d3b260306483",
-                "shasum": ""
-            },
-            "require": {
-                "ext-mbstring": "*",
-                "ext-openssl": "*",
-                "php": "^5.6 || ^7.0"
-            },
-            "require-dev": {
-                "mikey179/vfsstream": "~1.5",
-                "phpmd/phpmd": "~2.2",
-                "phpunit/php-invoker": "~1.1",
-                "phpunit/phpunit": "^5.7 || ^7.3",
-                "squizlabs/php_codesniffer": "~2.3"
-            },
-            "suggest": {
-                "lcobucci/clock": "*"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "3.1-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "Lcobucci\\JWT\\": "src"
-                },
-                "files": [
-                    "compat/class-aliases.php",
-                    "compat/json-exception-polyfill.php",
-                    "compat/lcobucci-clock-polyfill.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "BSD-3-Clause"
-            ],
-            "authors": [
-                {
-                    "name": "Luís Otávio Cobucci Oblonczyk",
-                    "email": "lcobucci@gmail.com",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A simple library to work with JSON Web Token and JSON Web Signature",
-            "keywords": [
-                "JWS",
-                "jwt"
-            ],
-            "funding": [
-                {
-                    "url": "https://github.com/lcobucci",
-                    "type": "github"
-                },
-                {
-                    "url": "https://www.patreon.com/lcobucci",
-                    "type": "patreon"
-                }
-            ],
-            "time": "2020-12-03T13:43:45+00:00"
-        },
-        {
             "name": "league/container",
             "version": "2.4.1",
             "source": {
@@ -6633,139 +6208,6 @@
                 "service"
             ],
             "time": "2017-05-10T09:20:27+00:00"
-        },
-        {
-            "name": "league/event",
-            "version": "2.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thephpleague/event.git",
-                "reference": "d2cc124cf9a3fab2bb4ff963307f60361ce4d119"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/event/zipball/d2cc124cf9a3fab2bb4ff963307f60361ce4d119",
-                "reference": "d2cc124cf9a3fab2bb4ff963307f60361ce4d119",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "henrikbjorn/phpspec-code-coverage": "~1.0.1",
-                "phpspec/phpspec": "^2.2"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "2.2-dev"
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "League\\Event\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Frank de Jonge",
-                    "email": "info@frenky.net"
-                }
-            ],
-            "description": "Event package",
-            "keywords": [
-                "emitter",
-                "event",
-                "listener"
-            ],
-            "time": "2018-11-26T11:52:41+00:00"
-        },
-        {
-            "name": "league/oauth2-server",
-            "version": "8.1.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/thephpleague/oauth2-server.git",
-                "reference": "09f22e8121fa1832962dba18213b80d4267ef8a3"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/thephpleague/oauth2-server/zipball/09f22e8121fa1832962dba18213b80d4267ef8a3",
-                "reference": "09f22e8121fa1832962dba18213b80d4267ef8a3",
-                "shasum": ""
-            },
-            "require": {
-                "defuse/php-encryption": "^2.2.1",
-                "ext-json": "*",
-                "ext-openssl": "*",
-                "lcobucci/jwt": "^3.3.1",
-                "league/event": "^2.2",
-                "php": ">=7.2.0",
-                "psr/http-message": "^1.0.1"
-            },
-            "replace": {
-                "league/oauth2server": "*",
-                "lncd/oauth2": "*"
-            },
-            "require-dev": {
-                "laminas/laminas-diactoros": "^2.3.0",
-                "phpstan/phpstan": "^0.11.19",
-                "phpstan/phpstan-phpunit": "^0.11.2",
-                "phpunit/phpunit": "^8.5.4 || ^9.1.3",
-                "roave/security-advisories": "dev-master"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "League\\OAuth2\\Server\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alex Bilbie",
-                    "email": "hello@alexbilbie.com",
-                    "homepage": "http://www.alexbilbie.com",
-                    "role": "Developer"
-                },
-                {
-                    "name": "Andy Millington",
-                    "email": "andrew@noexceptions.io",
-                    "homepage": "https://www.noexceptions.io",
-                    "role": "Developer"
-                }
-            ],
-            "description": "A lightweight and powerful OAuth 2.0 authorization and resource server library with support for all the core specification grants. This library will allow you to secure your API with OAuth and allow your applications users to approve apps that want to access their data from your API.",
-            "homepage": "https://oauth2.thephpleague.com/",
-            "keywords": [
-                "Authentication",
-                "api",
-                "auth",
-                "authorisation",
-                "authorization",
-                "oauth",
-                "oauth 2",
-                "oauth 2.0",
-                "oauth2",
-                "protect",
-                "resource",
-                "secure",
-                "server"
-            ],
-            "funding": [
-                {
-                    "url": "https://github.com/sephster",
-                    "type": "github"
-                }
-            ],
-            "time": "2020-07-01T11:33:50+00:00"
         },
         {
             "name": "masterminds/html5",
@@ -7893,47 +7335,6 @@
                 "stack"
             ],
             "time": "2017-11-18T14:57:29+00:00"
-        },
-        {
-            "name": "steverhoades/oauth2-openid-connect-server",
-            "version": "v1.3.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/steverhoades/oauth2-openid-connect-server.git",
-                "reference": "b38b082faa905d5feb2faf95add5f4a3b2cb7542"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/steverhoades/oauth2-openid-connect-server/zipball/b38b082faa905d5feb2faf95add5f4a3b2cb7542",
-                "reference": "b38b082faa905d5feb2faf95add5f4a3b2cb7542",
-                "shasum": ""
-            },
-            "require": {
-                "lcobucci/jwt": "^3.3",
-                "league/oauth2-server": "^5.1|^6.0|^7.0|^8.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^5.0",
-                "zendframework/zend-diactoros": "^1.3.2"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "OpenIDConnectServer\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Steve Rhoades",
-                    "email": "sedonami@gmail.com"
-                }
-            ],
-            "description": "An OpenID Connect Server that sites on The PHP League's OAuth2 Server",
-            "time": "2020-12-05T21:09:11+00:00"
         },
         {
             "name": "symfony-cmf/routing",
@@ -10285,12 +9686,12 @@
             "version": "1.9.1",
             "source": {
                 "type": "git",
-                "url": "https://github.com/webmozart/assert.git",
+                "url": "https://github.com/webmozarts/assert.git",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/webmozart/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
+                "url": "https://api.github.com/repos/webmozarts/assert/zipball/bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "reference": "bafc69caeb4d49c39fd0779086c03a3738cbb389",
                 "shasum": ""
             },
@@ -10427,8 +9828,7 @@
     "stability-flags": {
         "drupal/auto_entitylabel": 10,
         "drupal/entity_reference_layout": 20,
-        "drupal/imageapi_optimize_webp": 20,
-        "drupal/views_dynamic_title": 20
+        "drupal/imageapi_optimize_webp": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
